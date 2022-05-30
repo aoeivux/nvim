@@ -1,0 +1,17 @@
+{
+  "languageserver": {
+  "dart": {
+    "command": "dart",
+    "args": [
+      "/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot",
+      "--lsp",
+      "--client-id",
+      "vim",
+      "--client-version",
+      "coc.nvim"
+    ],
+    "filetypes": ["dart"],
+    "trace.server": "verbose"
+  }
+}
+}
