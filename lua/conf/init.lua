@@ -14,22 +14,6 @@ M.setup = function()
   -- plugins do not need to load, NOTE: no .lua suffix required
   local unload_plugins = {
     "init", -- we don't need to load init again
-    "vgit",
-    "nvim-hlslens",
-    "auto-session",
-    "vim-illuminate",
-    "vista",
-    "symbols-outline",
-    "nvim-gps",
-    "tabout",
-    "hlargs",
-    "spellsitter",
-    "tabnine",
-    "startup",
-    "nvim-neoclip",
-    "nvim-biscuits",
-    "nvim_context_vt",
-    "filetype",
   }
 
   local helper_set = {}

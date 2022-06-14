@@ -79,76 +79,27 @@ local opts = {
 }
 
 local mappings = {
-  ["a"] = { "<cmd>Alpha<cr>", "Welcome" },
   ["r"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+
   ["C"] = { "<cmd>%bd|e#<CR>", "Close Other Buffers" },
-  ["f"] = {
-    "<cmd>lua require('telescope.builtin').find_files()<cr>",
-    "Find files",
-  },
-  ["F"] = { "<cmd>lua require('telescope').extensions.live_grep_raw.live_grep_raw(require('telescope.themes').get_ivy())<cr>", "Find Text" },
-  ["p"] = { "<cmd>Telescope projects<cr>", "Projects" },
 
-  ["P"] = { "<cmd>SessionManager load_session<cr>", "Projects" },
+  ["f"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files", },
 
-  t = {
-    name ="code runner",
-    r = {"<cmd>SnipRun<CR>", "SnipRun"},
-  },
+  ["F"] = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args(require('telescope.themes').get_ivy())<cr>",
+    "Find Text" },
 
-  -- coc keymappings
-  c = {
-    name = "coc key",
-      d = { vim.api.nvim_set_keymap("n", "gd", "<Plug>(coc-definition)", {silent = true}), "goto difinition"}
+  ["e"] = {
+    "<cmd>NvimTreeToggle<CR>", "File Explorer"
   },
 
   ["o"] = {
     "<cmd>AerialToggle<CR>", "Outline"
   },
-  ["e"] = {
-    "<cmd>NvimTreeToggle<CR>", "File Explorer"
-  },
-  ["v"] = {
-    "<cmd>lua require('telescope').extensions.neoclip.default(require('telescope.themes').get_ivy())<cr>",
-    "Clipboard Manager"
-  },
-
-
-  T = {
-    name = "Trouble",
-    t = { "<cmd>Trouble<cr>", "ToggleTrouble" },
-    d = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnostics"},
-    w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics"},
-    q = { "<cmd>Trouble quickfix<cr>", "Quick Fix"},
-    u = { "<cmd>Trouble lsp_references<cr>", "Usage"},
-    g = { "<cmd>Gitsigns setloclist<cr>", "Open changed hunk" },
-  },
-
 
   g = {
-     name = "Git",
-     g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-     f = { "<cmd>DiffviewFileHistory<CR>", "File History" },
-     p = { "<cmd>DiffviewOpen<CR>", "Diff Project" },
-     n = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-     N = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-     r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-     R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-     s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-     S = { "<cmd>lua require 'gitsigns'.stage_buffer()<cr>", "Stage Hunk" },
-     u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", },
-     U = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", },
-     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-     c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-     d = {
-       "<cmd>Gitsigns diffthis HEAD<cr>",
-       "Diff",
-     },
-   },
-
-
+    name = "Git",
+    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+  },
 
   h = {
     name = "Help",

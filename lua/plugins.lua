@@ -25,8 +25,6 @@ end
 return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "lewis6991/impatient.nvim" -- Speed up loading Lua modules    TODO: figure out how to use this
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "kyazdani42/nvim-web-devicons" -- icons
 
@@ -35,12 +33,10 @@ return packer.startup(function(use)
     "nvim-telescope/telescope.nvim",
     tag = "nvim-0.6",
   }
-
   use {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make",
   }
-
   use "nvim-telescope/telescope-ui-select.nvim"
   use "nvim-telescope/telescope-live-grep-raw.nvim"
   --
@@ -49,7 +45,7 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
     commit = "44b7c8100269161e20d585f24bce322f6dcdf8d2",
-   }
+  }
 
   use {
     "nvim-treesitter/nvim-treesitter-textobjects",
@@ -57,8 +53,8 @@ return packer.startup(function(use)
   }
 
 
-  -- coc.nvim 
-  use {'neoclide/coc.nvim', branch = 'release'}
+  -- coc.nvim
+  use { 'neoclide/coc.nvim', branch = 'release' }
 
 
   -- Editor enhance
@@ -66,47 +62,19 @@ return packer.startup(function(use)
   use "terrortylor/nvim-comment"
 
   -- cmp plugins
-  use {"hrsh7th/nvim-cmp",} 
+  use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
-  use "ray-x/cmp-treesitter"
-  use "f3fora/cmp-spell" -- spell check
 
-
-  use "ethanholz/nvim-lastplace" -- auto return back to the last modified positon when open a file
-  use "nvim-pack/nvim-spectre" -- search and replace pane
-  use "tpope/vim-repeat" --  . command enhance
-  use "tpope/vim-surround" -- vim surround
-
-
-  use "akinsho/toggleterm.nvim" -- toggle terminal
-  use "ahmedkhalf/project.nvim" -- project manager
-  use "lukas-reineke/indent-blankline.nvim" -- indent blankline
-  use "folke/which-key.nvim" -- which  key
-  use {
-    "phaazon/hop.nvim", -- like easymotion, but more powerful
-    branch = "v1", -- optional but strongly recommended
-  }
-
-  -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-  -- Git
-  use {
-    "lewis6991/gitsigns.nvim",
-    tag = "v0.4",
-  }
+  use "ethanholz/nvim-lastplace" -- auto return back to the last modified positon when open a file
+  use "tpope/vim-surround" -- vim surround
 
-  -- UI
-  -- Colorschemes
-  use "folke/tokyonight.nvim"
-  use "sainnhe/everforest"
-
+  use "folke/which-key.nvim" -- which  key
 
   use {
     "kyazdani42/nvim-tree.lua",
@@ -119,18 +87,8 @@ return packer.startup(function(use)
     tag = "v1.2.0",
   }
   use "nvim-lualine/lualine.nvim" -- status line
-  use "goolord/alpha-nvim" -- welcome page
+  use 'morhetz/gruvbox'
   use "stevearc/aerial.nvim" -- outline
-  use "norcalli/nvim-colorizer.lua" -- show color
-  use "folke/trouble.nvim"  -- errors and warnings 
-  use "j-hui/fidget.nvim" -- show lsp progress
-  use "sindrets/winshift.nvim" -- rerange window layout
-
-  use { 'michaelb/sniprun',
-      run = 'bash ./install.sh',
-      commit = '57fcdc58c443f13d14889bc58c59e2494877509a',
-    }
-
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

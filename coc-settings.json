@@ -58,6 +58,7 @@
 		"jsonc",
 		"java",
 		"python",
+		"go",
 		"vue",
 		"svelte",
 		"c",
@@ -80,7 +81,6 @@
 	},
 	"yaml.format.enable": true,
 	"signature.target": "float",
-	"yank.enableCompletion": false,
 	"typescript.suggestionActions.enabled": true,
 	"typescript.format.enabled": true,
 	"flutter.outlineWidth": 40,
@@ -89,29 +89,23 @@
 	"flutter.openDevLogSplitCommand": "botright 12split",
 	"flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
 	"flutter.trace.server": "off",
-	"python.jediEnabled": false,
 	"html.format.enable": true,
 	"javascript.referencesCodeLens.enable": true,
 	"javascript.showUnused": true,
 	"javascript.suggest.names": true,
 	"javascript.suggestionActions.enabled": true,
 	"json.format.enable": true,
-	"eslint.autoFixOnSave": false,
 	"prettier.printWidth": 100,
 	"prettier.disableLanguages": [],
 	"prettier.formatterPriority": 1,
 	"prettier.useTabs": true,
 	"prettier.trailingComma": "all",
 	"prettier.singleQuote": false,
-	"todolist.autoUpload": true,
-	"todolist.promptForReminder": false,
-	"coc-actions.hideCursor": false,
-	"coc-actions.showActionKind": true,
 	"languageserver": {
 		"dart": {
 			"command": "dart",
 			"args": [
-				"/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot",
+				"/opt/homebrew/Caskroom/flutter/3.0.0/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot",
 				"--lsp",
 				"--client-id",
 				"vim",
@@ -125,6 +119,11 @@
 			"command": "clangd",
 			"rootPatterns": ["compile_flags.txt", "compile_commands.json"],
 			"filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+		},
+		"golang": {
+			"command": "gopls",
+			"rootPatterns": ["go.mod"],
+			"filetypes": ["go"]
 		}
 	},
 	"Lua.telemetry.enable": true

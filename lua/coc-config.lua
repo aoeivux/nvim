@@ -11,29 +11,22 @@ vim.o.updatetime = 300
 vim.g.coc_global_extensions = {
   'coc-css',
   'coc-diagnostic',
-  'coc-docker',
-  'coc-eslint',
   'coc-flutter-tools',
-  'coc-gitignore',
+  'coc-marketplace',
   'coc-html',
-  'coc-import-cost',
-  'coc-java',
   'coc-json',
-  'coc-lists',
-  'coc-prettier',
+  'coc-lists', --Some basic list sources for coc.nvim
+  'coc-prettier', -- Code format
   'coc-pyright',
   'coc-snippets',
-  'coc-sourcekit',
-  'coc-stylelint',
-  'coc-syntax',
-  'coc-tasks',
   'coc-translator',
   'coc-tsserver',
   'coc-vetur',
   'coc-vimlsp',
   'coc-yaml',
-  'coc-yank',
   'coc-sumneko-lua',
+  'coc-xml',
+  'coc-go',
 }
 
 
@@ -56,20 +49,3 @@ map("i", "<S-TAB>", "pumvisible() ? '<C-p>' : '<C-h>'", { noremap = true, expr =
 -- translator
 map("n", "<Leader>t", "<Plug>(coc-translator-p)", opts)
 map("v", "<Leader>t", "<Plug>(coc-translator-pv)", opts)
-
-
--- vim.cmd(
---   [[
--- function! Show_documentation()
--- 	call CocActionAsync('highlight')
--- 	if (index(['vim','help'], &filetype) >= 0)
--- 		execute 'h '.expand('<cword>')
--- 	else
--- 		call CocAction('doHover')
--- 	endif
--- endfunction
--- ]]
--- )
---
--- -- Use K to show documentation in preview window.
--- map("n", "gH", ":call ShowDocumentation()<CR>", opts)

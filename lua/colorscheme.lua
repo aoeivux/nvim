@@ -1,11 +1,9 @@
-
-vim.g.everforest_better_performance = 1
-vim.g.everforest_background = 'soft'
-vim.g.everforest_transparent_background=1
-local colorscheme = "everforest"
+vim.opt.background = "dark"
+vim.cmd [[autocmd vimenter * highlight Normal guibg=NONE ctermbg=NONE]]
+vim.gruvbox_transparent_bg = 1
+local colorscheme = "gruvbox"
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
-  vim.notify("colorscheme: " .. colorscheme .. " 没有找到！")
+  vim.notify("colorscheme: " .. colorscheme .. " not found！")
   return
 end
-
