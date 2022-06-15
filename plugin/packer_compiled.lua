@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/nero/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/nero/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/nero/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/nero/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/nero/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "C:\\Users\\Yonxean\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?.lua;C:\\Users\\Yonxean\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\Yonxean\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\Yonxean\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
+local install_cpath_pattern = "C:\\Users\\Yonxean\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\lua\\5.1\\?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -71,137 +71,137 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   LuaSnip = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["aerial.nvim"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/aerial.nvim",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\aerial.nvim",
     url = "https://github.com/stevearc/aerial.nvim"
   },
   ["bufferline.nvim"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-cmdline"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/cmp-path",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
   cmp_luasnip = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["coc.nvim"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/coc.nvim",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
   gruvbox = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/gruvbox",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox",
     url = "https://github.com/morhetz/gruvbox"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-comment"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/nvim-comment",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
   ["nvim-lastplace"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/nvim-lastplace",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lastplace",
     url = "https://github.com/ethanholz/nvim-lastplace"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-treesitter-textobjects"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope-live-grep-raw.nvim"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/telescope-live-grep-raw.nvim",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-live-grep-raw.nvim",
     url = "https://github.com/nvim-telescope/telescope-live-grep-raw.nvim"
   },
   ["telescope-ui-select.nvim"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/telescope-ui-select.nvim",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-ui-select.nvim",
     url = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/vim-surround",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-surround",
     url = "https://github.com/tpope/vim-surround"
   },
   ["which-key.nvim"] = {
     loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    path = "C:\\Users\\Yonxean\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
   }
 }

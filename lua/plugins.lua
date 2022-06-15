@@ -29,14 +29,12 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons" -- icons
 
   -- Telescope
-  use {
-    "nvim-telescope/telescope.nvim",
-    tag = "nvim-0.6",
-  }
+  use "nvim-telescope/telescope.nvim"
   use {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make",
   }
+
   use "nvim-telescope/telescope-ui-select.nvim"
   use "nvim-telescope/telescope-live-grep-raw.nvim"
   --

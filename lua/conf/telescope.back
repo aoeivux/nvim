@@ -1,8 +1,12 @@
-local present, telescope_setup = pcall(require, "telescope")
-if not present then
+local status_ok, telescope = pcall(require, "telescope")
+
+if not status_ok then
+  vim.notify("Telescope Not Found!")
   return
 end
-local actions = require("telescope.actions")
+
+local actions = require "telescope.actions"
+
 local previewers = require("telescope.previewers")
 local Job = require("plenary.job")
 local new_maker = function(filepath, bufnr, opts)
@@ -36,14 +40,14 @@ if os == "Linux" or os == "Darwin" then
   else
     finder = "fd"
   end
-  buffer_previewer_maker = new_maker
+  buffer_previewer_maker = buffer_previewer_maker
 else
   finder = "fd"
   buffer_previewer_maker = nil
 end
-
 local telescope_config = {
   defaults = {
+    buffer_previewer_maker = buffer_previewer_maker,
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
@@ -108,7 +112,6 @@ local telescope_config = {
         ["?"] = actions.which_key,
       },
     },
-    buffer_previewer_maker = buffer_previewer_maker,
     vimgrep_arguments = {
       "rg",
       "--color=never",
@@ -135,7 +138,6 @@ local telescope_config = {
       }
     },
   },
-
 }
 
 if require("utils").is_plugin_installed("telescope-fzf-native.nvim") then
@@ -145,9 +147,7 @@ if require("utils").is_plugin_installed("telescope-fzf-native.nvim") then
     override_file_sorter = true,
     case_mode = "smart_case",
   }
-  telescope_setup.load_extension("fzf")
-  telescope_setup.load_extension("ui-select")
+  telescope.load_extension("fzf")
+  telescope.load_extension("ui-select")
 end
-
-
-telescope_setup.setup(telescope_config)
+telescope.setup(telescope_config)
