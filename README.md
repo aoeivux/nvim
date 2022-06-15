@@ -1,3 +1,22 @@
+# INSTALLATION
+
+On linux and macOS:
+
+```shell
+git clone https://github.com/artart222/CodeArt ~/.config/nvim
+chmod +x ~/.config/nvim/installer/linux-mac.sh
+exec ~/.config/nvim/installer/linux-mac.sh
+```
+
+On Windows:
+🐚 open a powershell session as administrator and run this command:
+
+```shell
+git clone https://github.com/artart222/CodeArt $HOME\AppData\Local\nvim
+powershell.exe -executionpolicy bypass -file $HOME\AppData\Local\installer\windows.ps1
+```
+
+
 ```shell
 sudo apt-get install ranger caca-utils highlight atool w3m poppler-utils mediainfo
 ```
