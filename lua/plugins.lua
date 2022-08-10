@@ -29,16 +29,15 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons" -- icons
 
   -- Telescope
-  use {
-    "nvim-telescope/telescope.nvim",
-    tag = "nvim-0.6",
-  }
+  use "nvim-telescope/telescope.nvim"
   use {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make",
   }
+
   use "nvim-telescope/telescope-ui-select.nvim"
   use "nvim-telescope/telescope-live-grep-raw.nvim"
+  use "norcalli/nvim-colorizer.lua"
   --
   -- Treesittetr
   use {
@@ -66,11 +65,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-
   use "ethanholz/nvim-lastplace" -- auto return back to the last modified positon when open a file
   use "tpope/vim-surround" -- vim surround
 
@@ -87,9 +81,14 @@ return packer.startup(function(use)
     tag = "v1.2.0",
   }
   use "nvim-lualine/lualine.nvim" -- status line
-  use 'morhetz/gruvbox'
-  use "stevearc/aerial.nvim" -- outline
-
+  use 'lukas-reineke/indent-blankline.nvim'
+  use "akinsho/toggleterm.nvim"
+  use 'lifepillar/vim-solarized8'
+  use 'sheerun/vim-polyglot' -- 解决了在html嵌入javascript代码缩进错误的问题
+  use {
+    'svrana/neosolarized.nvim',
+    requires = { 'tjdevries/colorbuddy.nvim' }
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

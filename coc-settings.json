@@ -2,14 +2,12 @@
 	"coc.preferences.snippetStatusText": "Ⓢ ",
 	"coc.preferences.extensionUpdateCheck": "daily",
 	"coc.preferences.messageLevel": "error",
-	"suggest.detailMaxLength": 60,
-	"suggest.noselect": true,
-	"suggest.enablePreselect": false,
+	"suggest.detailMaxLength": 80,
+	"suggest.noselect": false,
+	"suggest.enablePreselect": true,
 	"suggest.triggerAfterInsertEnter": true,
 	"suggest.autoTrigger": "always",
 	"suggest.timeout": 5000,
-	"suggest.enablePreview": true,
-	"suggest.floatEnable": true,
 	"suggest.detailField": "preview",
 	"suggest.snippetIndicator": "",
 	"suggest.completionItemKindLabels": {
@@ -101,6 +99,9 @@
 	"prettier.useTabs": true,
 	"prettier.trailingComma": "all",
 	"prettier.singleQuote": false,
+	"java.home": "/opt/homebrew/Cellar/openjdk@11/11.0.15/",
+	"emmet.showExpandedAbbreviation": false,
+	"emmet.includeLanguages": { "vue-html": "html", "javascript": "javascriptreact" },
 	"languageserver": {
 		"dart": {
 			"command": "dart",
