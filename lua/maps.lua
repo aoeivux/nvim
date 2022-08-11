@@ -101,11 +101,13 @@ local keymap = vim.keymap
 keymap.set('n', 'te', ':tabedit')
 
 --rename buffer
--- file yourname
+-- file + yourname
 
 -- don's paste detele words
 keymap.set('n', 'x', '"_x')
-
+keymap.set('v', 'x', '"_x')
+keymap.set('n', 'c', '"_c')
+keymap.set('v', 'c', '"_c')
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')

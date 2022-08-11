@@ -67,28 +67,6 @@ keymap(
   [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]],
   expr_opts
 )
--- tab
-keymap(
-  "i",
-  "<tab>",
-  [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]],
-  expr_opts
-)
--- use <c-space> to trigger completion.
-keymap("i", "<c-space>", [[coc#refresh()]], expr_opts)
-
--- navigate diagnostic
-keymap("n", "gk", "<Plug>(coc-diagnostic-prev)", { silent = true })
-keymap("n", "gj", "<Plug>(coc-diagnostic-next)", { silent = true })
-
--- GoTo code navigation.
-keymap("n", "gd", "<Plug>(coc-definition)", { silent = true })
-keymap("n", "gs", ":call CocAction('jumpDefinition', 'vsplit') <CR>", { silent = true })
-keymap("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
-keymap("n", "gi", "<Plug>(coc-implementation)", { silent = true })
-keymap("n", "gr", "<Plug>(coc-references)", { silent = true })
-keymap("n", "<leader>ca", "<Plug>(coc-codeaction)", {})
-
 
 -- Use gh to show documentation in preview window.
 function Show_documentation()
@@ -103,6 +81,24 @@ function Show_documentation()
     )
   end
 end
+
+-- TAB for completion
+-- vim.cmd [[inoremap <silent><expr> <tab> coc#pum#visible() ? coc#pum#confirm() : "\<tab>"]]
+keymap("i", "<TAB>", [[coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"]], { silent = true, expr = true })
+-- use <c-space> to trigger completion.
+keymap("i", "<c-space>", [[coc#refresh()]], expr_opts)
+-- navigate diagnostic
+keymap("n", "gk", "<Plug>(coc-diagnostic-prev)", { silent = true })
+keymap("n", "gj", "<Plug>(coc-diagnostic-next)", { silent = true })
+
+-- GoTo code navigation.
+keymap("n", "gd", "<Plug>(coc-definition)", { silent = true })
+keymap("n", "gs", ":call CocAction('jumpDefinition', 'vsplit') <CR>", { silent = true })
+keymap("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
+keymap("n", "gi", "<Plug>(coc-implementation)", { silent = true })
+keymap("n", "gr", "<Plug>(coc-references)", { silent = true })
+keymap("n", "<leader>ca", "<Plug>(coc-codeaction)", {})
+
 
 keymap("n", "gh", ":lua Show_documentation() <CR>", opts)
 

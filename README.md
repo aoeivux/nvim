@@ -1,5 +1,5 @@
 # INSTALLATION BEFORE
-exec installer/linux_mac.sh or ./installer/windows.ps1
+run installer/linux_mac.sh or installer/windows.ps1
 
 # INSTALLATION
 On linux and macOS:

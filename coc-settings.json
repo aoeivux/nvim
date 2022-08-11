@@ -5,7 +5,7 @@
 	"suggest.detailMaxLength": 80,
 	"suggest.noselect": false,
 	"suggest.enablePreselect": true,
-	"suggest.triggerAfterInsertEnter": true,
+	"suggest.triggerAfterInsertEnter": false,
 	"suggest.autoTrigger": "always",
 	"suggest.timeout": 5000,
 	"suggest.detailField": "preview",

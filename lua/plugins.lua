@@ -65,7 +65,9 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
+
   use "ethanholz/nvim-lastplace" -- auto return back to the last modified positon when open a file
+
   use "tpope/vim-surround" -- vim surround
 
   use "folke/which-key.nvim" -- which  key
