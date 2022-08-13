@@ -3,9 +3,11 @@
 	"coc.preferences.extensionUpdateCheck": "daily",
 	"coc.preferences.messageLevel": "error",
 	"suggest.detailMaxLength": 80,
+	"notification.disabledProgressSources": ["*"], //stop all notifications
+	"signature.enable": false,
 	"suggest.noselect": false,
 	"suggest.enablePreselect": true,
-	"suggest.triggerAfterInsertEnter": false,
+	"suggest.triggerAfterInsertEnter": true,
 	"suggest.autoTrigger": "always",
 	"suggest.timeout": 5000,
 	"suggest.detailField": "preview",
@@ -78,7 +80,7 @@
 		"eelixir": "mix_format"
 	},
 	"yaml.format.enable": true,
-	"signature.target": "float",
+	"signature.target": "echo",
 	"typescript.suggestionActions.enabled": true,
 	"typescript.format.enabled": true,
 	"flutter.outlineWidth": 40,

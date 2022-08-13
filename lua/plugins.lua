@@ -85,7 +85,6 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim" -- status line
   use 'lukas-reineke/indent-blankline.nvim'
   use "akinsho/toggleterm.nvim"
-  use 'lifepillar/vim-solarized8'
   use 'sheerun/vim-polyglot' -- 解决了在html嵌入javascript代码缩进错误的问题
   use {
     'svrana/neosolarized.nvim',
