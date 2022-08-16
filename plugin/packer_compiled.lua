@@ -69,35 +69,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  LuaSnip = {
-    loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/LuaSnip",
-    url = "https://github.com/L3MON4D3/LuaSnip"
-  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/nero/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
-  },
-  ["cmp-buffer"] = {
-    loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/cmp-buffer",
-    url = "https://github.com/hrsh7th/cmp-buffer"
-  },
-  ["cmp-cmdline"] = {
-    loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
-    url = "https://github.com/hrsh7th/cmp-cmdline"
-  },
-  ["cmp-path"] = {
-    loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/cmp-path",
-    url = "https://github.com/hrsh7th/cmp-path"
-  },
-  cmp_luasnip = {
-    loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
-    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["coc.nvim"] = {
     loaded = true,
@@ -108,11 +83,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nero/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
     url = "https://github.com/tjdevries/colorbuddy.nvim"
-  },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -213,11 +183,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nero/.local/share/nvim/site/pack/packer/start/vim-polyglot",
     url = "https://github.com/sheerun/vim-polyglot"
-  },
-  ["vim-solarized8"] = {
-    loaded = true,
-    path = "/Users/nero/.local/share/nvim/site/pack/packer/start/vim-solarized8",
-    url = "https://github.com/lifepillar/vim-solarized8"
   },
   ["vim-surround"] = {
     loaded = true,

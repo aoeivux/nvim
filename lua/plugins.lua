@@ -62,9 +62,9 @@ return packer.startup(function(use)
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  -- use "hrsh7th/cmp-buffer" -- buffer completions
+  -- use "hrsh7th/cmp-path" -- path completions
+  -- use "hrsh7th/cmp-cmdline" -- cmdline completions
 
   use "ethanholz/nvim-lastplace" -- auto return back to the last modified positon when open a file
 
