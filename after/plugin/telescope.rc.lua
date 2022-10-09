@@ -26,7 +26,7 @@ local new_maker = function(filepath, bufnr, opts)
       :sync()
 end
 
-local os = require("utils").os
+local os = require("swaylivrx.utils").os
 local buffer_previewer_maker
 local finder
 if os == "Linux" or os == "Darwin" then
@@ -138,7 +138,7 @@ local telescope_config = {
 
 }
 
-if require("utils").is_plugin_installed("telescope-fzf-native.nvim") then
+if require("swaylivrx.utils").is_plugin_installed("telescope-fzf-native.nvim") then
   telescope_config.extensions["fzf"] = {
     fuzzy = true,
     override_generic_sorter = true,

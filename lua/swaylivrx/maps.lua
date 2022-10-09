@@ -63,8 +63,8 @@ keymap("n", "<leader>d", ":bdelete<cr>", opts)
 
 
 -- Navigate buffers
-keymap("n", "<C-n>", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "<C-p>", ":BufferLineCyclePrev<CR>", opts)
+keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts)
 
 -- Navigate line
 keymap("n", "H", "^", opts)

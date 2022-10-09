@@ -1,10 +1,9 @@
-require "basic"
-require "maps"
-require "plugins"
-require "highlights"
-require "utils"
-require "coc"
-require "autochdir"
+require "swaylivrx.basic"
+require "swaylivrx.maps"
+require "swaylivrx.plugins"
+require "swaylivrx.highlights"
+require "swaylivrx.utils"
+require "swaylivrx.autochdir"
 
 
 local has = function(x)

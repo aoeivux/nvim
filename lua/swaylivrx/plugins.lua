@@ -16,10 +16,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  return
-end
-
+if not status_ok then return end
 
 -- Install your plugins here
 return packer.startup(function(use)
@@ -51,9 +48,15 @@ return packer.startup(function(use)
     commit = "c81382328ad47c154261d1528d7c921acad5eae5",
   }
 
+  -- neovim lsp
+  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'glepnir/lspsaga.nvim'
+  use 'onsails/lspkind.nvim'
+  use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 
-  -- coc.nvim
-  use { 'neoclide/coc.nvim', branch = 'release' }
+
 
 
   -- Editor enhance
@@ -62,6 +65,9 @@ return packer.startup(function(use)
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
+  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
+  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+  use 'L3MON4D3/LuaSnip' -- Snippets pluginc
   -- use "hrsh7th/cmp-buffer" -- buffer completions
   -- use "hrsh7th/cmp-path" -- path completions
   -- use "hrsh7th/cmp-cmdline" -- cmdline completions
@@ -84,13 +90,15 @@ return packer.startup(function(use)
   }
   use "nvim-lualine/lualine.nvim" -- status line
   use 'lukas-reineke/indent-blankline.nvim'
-  use "akinsho/toggleterm.nvim"
   use 'sheerun/vim-polyglot' -- 解决了在html嵌入javascript代码缩进错误的问题
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
-  use 'mhinz/vim-startify'
+  use 'mhinz/vim-startify' --start up ui
+  
+  
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
