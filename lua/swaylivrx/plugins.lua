@@ -84,13 +84,10 @@ return packer.startup(function(use)
     -- file explore
   }
 
-  use {
-    "akinsho/bufferline.nvim", -- tab
-    tag = "v1.2.0",
-  }
+  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
   use "nvim-lualine/lualine.nvim" -- status line
   use 'lukas-reineke/indent-blankline.nvim'
-  use 'sheerun/vim-polyglot' -- 解决了在html嵌入javascript代码缩进错误的问题
+  -- use 'sheerun/vim-polyglot' -- 解决了在html嵌入javascript代码缩进错误的问题
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }

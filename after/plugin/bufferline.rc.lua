@@ -14,27 +14,25 @@ bufferline.setup({
   },
   highlights = {
     separator = {
-      guifg = '#073642',
-      guibg = '#002b36',
+      fg = '#073642',
+      bg = '#002b36',
     },
     separator_selected = {
-      guifg = '#073642',
+      fg = '#073642',
     },
     background = {
-      guifg = '#657b83',
-      guibg = '#002b36'
+      fg = '#657b83',
+      bg = '#002b36'
     },
     buffer_selected = {
-      guifg = '#fdf6e3',
+      fg = '#fdf6e3',
       -- 0 => false | 1 => true
       bold = 1,
       italic = false,
 
     },
     fill = {
-      guibg = '#073642'
+      bg = '#073642'
     }
   },
 })
-vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
-vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
