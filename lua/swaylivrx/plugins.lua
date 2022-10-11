@@ -80,8 +80,7 @@ return packer.startup(function(use)
 
   use {
     "kyazdani42/nvim-tree.lua",
-    tag = "nightly",
-    -- file explore
+    branch = "1406-allow-folder_arrow"
   }
 
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
