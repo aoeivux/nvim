@@ -1,0 +1,31 @@
+set hlsearch
+set scrolloff=4
+set ignorecase smartcase
+set showmode
+set history=1000
+
+" easy system clipboard copy/paste
+noremap y "*y
+noremap Y "*Y
+noremap p "*p
+noremap P "*P
+
+
+" clear the search buffer when hitting return
+nnoremap ;l :nohlsearch<cr>
+
+" actions
+nnoremap <space>q :action CloseContent<cr>
+nnoremap <space>Q :action ReopenClosedTab<cr>
+nnoremap <space>a :action SearchEverywhere<cr>
+nnoremap <space>r :action RecentFiles<cr>
+nnoremap <space>c :action GotoAction<cr>
+nnoremap <space>p :action ShowFilePath<CR>
+
+noremap J 5j
+noremap K 5k
+noremap H ^
+noremap L $
+
+nnoremap S :w<cr>
+nnoremap Q :q<cr>

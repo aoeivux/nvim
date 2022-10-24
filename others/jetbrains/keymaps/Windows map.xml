@@ -1,0 +1,21 @@
+<keymap version="1" name="Windows map" parent="$default">
+  <action id="EditorDecreaseFontSize">
+    <mouse-shortcut keystroke="control button142" />
+  </action>
+  <action id="EditorDown">
+    <keyboard-shortcut first-keystroke="down" />
+    <keyboard-shortcut first-keystroke="ctrl j" />
+  </action>
+  <action id="EditorIncreaseFontSize">
+    <mouse-shortcut keystroke="control button143" />
+  </action>
+  <action id="EditorUp">
+    <keyboard-shortcut first-keystroke="up" />
+    <keyboard-shortcut first-keystroke="ctrl k" />
+  </action>
+  <action id="InsertLiveTemplate" />
+  <action id="ShowSettings">
+    <keyboard-shortcut first-keystroke="ctrl alt s" />
+    <keyboard-shortcut first-keystroke="ctrl comma" />
+  </action>
+</keymap>

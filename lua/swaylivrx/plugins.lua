@@ -39,7 +39,6 @@ return packer.startup(function(use)
   -- Treesittetr
   use {
     "nvim-treesitter/nvim-treesitter",
-    commit = "a5dd688b5a6eb75968edd85faf3a577a3eb56fbb",
     run = ":TSUpdate",
   }
 
@@ -55,8 +54,6 @@ return packer.startup(function(use)
   use 'glepnir/lspsaga.nvim'
   use 'onsails/lspkind.nvim'
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-
-
 
 
   -- Editor enhance
@@ -87,6 +84,10 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim" -- status line
   use 'lukas-reineke/indent-blankline.nvim'
   -- use 'sheerun/vim-polyglot' -- 解决了在html嵌入javascript代码缩进错误的问题
+  
+  --
+  --colorscheme
+  --
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }

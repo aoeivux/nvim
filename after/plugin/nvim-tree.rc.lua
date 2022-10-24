@@ -8,7 +8,7 @@ nvim_tree.setup({
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = true,
   ignore_buffer_on_setup = false,
-  open_on_setup = true,
+  open_on_setup = false,
   open_on_setup_file = false,
   open_on_tab = false,
   sort_by = "name",
@@ -138,14 +138,14 @@ nvim_tree.setup({
 )
 
 --
--- with relative path
-require "nvim-tree.events".on_file_created(function(file) vim.cmd("edit " .. file.fname) end)
--- with absolute path
--- require"nvim-tree.events".on_file_created(function(file) vim.cmd("edit "..vim.fn.fnamemodify(file.fname, ":p")) end)
-
--- auto close feature
--- vim.cmd(
---   [[
---     autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
--- ]]
--- )
+-- -- with relative path
+-- require "nvim-tree.events".on_file_created(function(file) vim.cmd("edit " .. file.fname) end)
+-- -- with absolute path
+-- -- require"nvim-tree.events".on_file_created(function(file) vim.cmd("edit "..vim.fn.fnamemodify(file.fname, ":p")) end)
+--
+-- -- auto close feature
+-- -- vim.cmd(
+-- --   [[
+-- --     autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
+-- -- ]]
+-- -- )
