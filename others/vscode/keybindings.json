@@ -208,12 +208,6 @@
 		"command": "-editor.action.startFindReplaceAction",
 		"when": "editorFocus || editorIsOpen"
 	},
-	{ // quit side bar only when explore is focused
-		"key": "q",
-		"command": "workbench.action.toggleSidebarVisibility",
-		"when": "sideBarFocus && activeViewlet == 'workbench.view.explorer'"
-	},
-	// -- disable a bunch of keybindings which may have conflicts with above keybindings
 	{
 		"key": "ctrl+j",
 		"command": "-editor.action.insertLineAfter",

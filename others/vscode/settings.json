@@ -455,8 +455,7 @@
         "statusBar.foreground": "#f5f6fa",
         "editorCursor.foreground": "#2165da",
         "editorCursor.background": "#F5f6fa"
-    },
-    "security.workspace.trust.enabled": false,
+	},
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
             "source": "PowerShell",
@@ -492,7 +491,11 @@
     "editor.detectIndentation": false,
 	"editor.renderWhitespace": "trailing",
 	"html.format.enable": false,
-	"terminal.integrated.fontFamily": "'FiraCode Nerd Font'", //取消缩进小箭头
+	"terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
+	"security.workspace.trust.startupPrompt": "always",
+	"security.workspace.trust.enabled": false,
+	"vim.autoindent": false,
+	"explorer.compactFolders": false, //取消缩进小箭头
 
 
 }
