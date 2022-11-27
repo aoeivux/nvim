@@ -1,3 +1,4 @@
+-- auto change dir
 vim.api.nvim_command('set autochdir')
 
 vim.cmd [[

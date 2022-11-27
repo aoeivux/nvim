@@ -18,9 +18,7 @@ end
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then return end
 
--- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "kyazdani42/nvim-web-devicons" -- icons
