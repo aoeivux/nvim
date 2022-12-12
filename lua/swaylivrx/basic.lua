@@ -47,6 +47,12 @@ local options = {
 }
 
 vim.opt.shortmess:append "c"
+vim.opt.cursorline = true
+vim.opt.termguicolors = true
+vim.opt.winblend = 0
+vim.opt.wildoptions = 'pum'
+vim.opt.pumblend = 5
+vim.opt.background = 'dark'
 
 for k, v in pairs(options) do
 	vim.opt[k] = v

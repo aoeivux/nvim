@@ -128,26 +128,7 @@ local telescope_config = {
       find_command = { finder, "--type=file", "--follow", "--exclude=.git" },
     },
   },
-  extensions = {
-    ["ui-select"] = {
-      require("telescope.themes").get_dropdown {
-        -- even more opts
-      }
-    },
-  },
 
 }
-
-if require("swaylivrx.utils").is_plugin_installed("telescope-fzf-native.nvim") then
-  telescope_config.extensions["fzf"] = {
-    fuzzy = true,
-    override_generic_sorter = true,
-    override_file_sorter = true,
-    case_mode = "smart_case",
-  }
-  telescope_setup.load_extension("fzf")
-  telescope_setup.load_extension("ui-select")
-end
-
 
 telescope_setup.setup(telescope_config)

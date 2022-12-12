@@ -1,7 +1,6 @@
 require "swaylivrx.basic"
 require "swaylivrx.maps"
 require "swaylivrx.plugins"
-require "swaylivrx.highlights"
 require "swaylivrx.utils"
 require "swaylivrx.autochdir"
 

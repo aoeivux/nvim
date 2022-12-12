@@ -25,13 +25,6 @@ return packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  use {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    run = "make",
-  }
-
-  use "nvim-telescope/telescope-ui-select.nvim"
-  use "nvim-telescope/telescope-live-grep-raw.nvim"
   use "norcalli/nvim-colorizer.lua"
   --
   -- Treesittetr
@@ -63,9 +56,9 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- Snippets pluginc
-  -- use "hrsh7th/cmp-buffer" -- buffer completions
-  -- use "hrsh7th/cmp-path" -- path completions
-  -- use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
 
   use "ethanholz/nvim-lastplace" -- auto return back to the last modified positon when open a file
 
@@ -82,20 +75,9 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim" -- status line
   use 'lukas-reineke/indent-blankline.nvim'
   -- use 'sheerun/vim-polyglot' -- 解决了在html嵌入javascript代码缩进错误的问题
-  
-  --
-  --colorscheme
-  --
-  use {
-    'svrana/neosolarized.nvim',
-    requires = { 'tjdevries/colorbuddy.nvim' }
-  }
   use 'mhinz/vim-startify' --start up ui
-  
- -- install without yarn or npm
-
- -- markdown preview 
--- use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }) 
+  use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' } --code runner
+  use 'folke/tokyonight.nvim' --colorscheme
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
