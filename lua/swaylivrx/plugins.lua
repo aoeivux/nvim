@@ -69,6 +69,8 @@ return packer.startup(function(use)
       run = ':TSUpdate'
   }
   use 'sainnhe/gruvbox-material'
+  
+  use 'mfussenegger/nvim-jdtls' -- java lsp 
 
 
   if PACKER_BOOTSTRAP then
