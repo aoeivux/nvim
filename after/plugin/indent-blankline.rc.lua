@@ -1,6 +1,5 @@
 local status_ok, blankline = pcall(require, "indent_blankline")
 if not status_ok then return end
-
 vim.opt.termguicolors = true
 vim.g.indent_blankline_char = ""
 -- vim.opt.list = true

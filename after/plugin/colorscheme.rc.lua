@@ -1,35 +1,40 @@
-require("tokyonight").setup({
-  style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-  light_style = "day", -- The theme is used when the background is set to light
-  transparent = false, -- Enable this to disable setting the background color
-  terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
-  styles = {
-    -- Style to be applied to different syntax groups
-    -- Value is any valid attr-list value for `:help nvim_set_hl`
-    comments = { italic = true },
-    keywords = { italic = true },
-    functions = {},
-    variables = {},
-    -- Background styles. Can be "dark", "transparent" or "normal"
-    sidebars = "dark", -- style for sidebars, see below
-    floats = "dark", -- style for floating windows
-  },
-  sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
-  day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
-  hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
-  dim_inactive = false, -- dims inactive windows
-  lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
+local g = vim.g
+local o = vim.o
+local cmd = vim.cmd
 
-  --- You can override specific color groups to use other groups or a hex color
-  --- function will be called with a ColorScheme table
-  on_colors = function(colors) end,
+-- Gruvbox-material
+local palettes = { m = "material", x = "mix", o = "original" }
+local backgrounds = { h = "hard", m = "medium", s = "soft" }
+local modes = { l = "light", d = "dark" }
 
-  --- You can override specific highlights to use other groups or a hex color
-  --- function will be called with a Highlights and ColorScheme table
-  on_highlights = function(highlights, colors) end,
-})
+local M = {}
+M.palette = palettes.m
+M.background = backgrounds.s
+M.mode = modes.d
 
-vim.cmd[[colorscheme tokyonight]]
+o.background = M.mode
+g.gruvbox_material_background = M.background
+g.gruvbox_material_palette = M.palette
 
+g.gruvbox_material_disable_italic_comment = 0
+g.gruvbox_material_enable_bold = 1
+g.gruvbox_material_enable_italic = 1
+g.gruvbox_material_cursor = "auto"
+g.gruvbox_material_transparent_background = 0
+-- g.gruvbox_material_visual = "grey background"
+-- g.gruvbox_material_selection_background = "grey"
+g.gruvbox_material_sign_column_background = "none"
+g.gruvbox_material_spell_foreground = "none"
+g.gruvbox_material_ui_contrast = "low"
+g.gruvbox_material_show_eob = 0
+g.gruvbox_material_diagnostic_text_highlight = 0
+g.gruvbox_material_diagnostic_line_highlight = 1
+g.gruvbox_material_diagnostic_virtual_text = 1
+g.gruvbox_material_current_word = "grey background"
+g.gruvbox_material_disable_terminal_colors = 0
+g.gruvbox_material_statusline_style = M.palette
+g.gruvbox_material_lightline_disable_bold = 0
 
+cmd("colorscheme gruvbox-material")
 
+return M

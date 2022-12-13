@@ -23,10 +23,8 @@ local options = {
 	undofile = true, -- enable persistent undo
 	updatetime = 300, -- faster completion (4000ms default)
 	writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-	autoindent = true,
+  smarttab = true,
 	expandtab = true, -- convert tabs to spaces
-	shiftwidth = 2, -- the number of spaces inserted for each indentation
-	tabstop = 2, -- insert 2 spaces for a tab
 	cursorline = true, -- highlight the current line
 	cursorcolumn = false, -- cursor column.
 	number = true, -- set numbered lines
@@ -44,6 +42,10 @@ local options = {
 	spell = false, -- add spell support
 	spelllang = { 'en_us' }, -- support which languages?
 	diffopt = "vertical,filler,internal,context:4", -- vertical diff split view
+    tabstop=2,
+    shiftwidth=2,
+    softtabstop=2,
+    autoindent=true,
 }
 
 vim.opt.shortmess:append "c"

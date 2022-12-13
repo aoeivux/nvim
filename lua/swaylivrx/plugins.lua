@@ -26,25 +26,12 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "norcalli/nvim-colorizer.lua"
-  --
-  -- Treesittetr
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
-
-  use {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    commit = "c81382328ad47c154261d1528d7c921acad5eae5",
-  }
-
   -- neovim lsp
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'glepnir/lspsaga.nvim'
   use 'onsails/lspkind.nvim'
-  use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 
 
   -- Editor enhance
@@ -59,25 +46,30 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use 'f3fora/cmp-spell'
+  use 'rafamadriz/friendly-snippets' -- Snippets collection for a set of different programming languages for faster development.
+  
+  use "tpope/vim-surround" -- vim surround
 
   use "ethanholz/nvim-lastplace" -- auto return back to the last modified positon when open a file
 
-  use "tpope/vim-surround" -- vim surround
-
   use "folke/which-key.nvim" -- which  key
 
-  use {
-    "kyazdani42/nvim-tree.lua",
-    branch = "1406-allow-folder_arrow"
-  }
+  use {"kyazdani42/nvim-tree.lua",branch = "1406-allow-folder_arrow"}
 
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
   use "nvim-lualine/lualine.nvim" -- status line
   use 'lukas-reineke/indent-blankline.nvim'
   -- use 'sheerun/vim-polyglot' -- 解决了在html嵌入javascript代码缩进错误的问题
+  --
   use 'mhinz/vim-startify' --start up ui
   use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' } --code runner
-  use 'folke/tokyonight.nvim' --colorscheme
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+  }
+  use 'sainnhe/gruvbox-material'
+
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
