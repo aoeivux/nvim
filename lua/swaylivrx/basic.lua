@@ -42,10 +42,10 @@ local options = {
 	spell = false, -- add spell support
 	spelllang = { 'en_us' }, -- support which languages?
 	diffopt = "vertical,filler,internal,context:4", -- vertical diff split view
-    tabstop=2,
-    shiftwidth=2,
-    softtabstop=2,
-    autoindent=true,
+  tabstop=2,
+  shiftwidth=2,
+  softtabstop=2,
+  autoindent=true,
 }
 
 vim.opt.shortmess:append "c"

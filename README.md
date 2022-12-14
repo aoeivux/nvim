@@ -47,11 +47,13 @@ C:\Users\xxx\AppData\Roaming\JetBrains\IntelliJIdeaxxx\
 
 ## jdtls-nvim lsp配置Java
 !!! 只支持jdk17+
-Java语言服务器支持，由jdtls-nvim插件支持配置，通过 eclipse.jdt.ls 进行服务
+Java语言服务器支持，由jdtls-nvim(packer)插件支持配置，通过 eclipse.jdt.ls 进行服务
 这里已经配置好，需要下载安装eclipse.jdt.ls [jdtls-nvim](https://github.com/mfussenegger/nvim-jdtls)主页查看，我通过 brew Mac包管理器进行安装
 默认下载位置在``/opt/homebrew/Cellar/jdtls/1.15.0/``, 具体配置内容查看jdtls-nvim主页
 
-
+## metals scala lsp配置
+通过下载nvim-metals插件(packer)[nvim-metals](https://github.com/scalameta/nvim-metals/),安装过程看主页，通过cs安装
+配置文件在``./after/plugin/scala-lsp.rc.lua``
 
 
 

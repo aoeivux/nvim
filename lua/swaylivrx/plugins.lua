@@ -72,6 +72,7 @@ return packer.startup(function(use)
   
   use 'mfussenegger/nvim-jdtls' -- java lsp 
 
+  use({'scalameta/nvim-metals',requires = { "nvim-lua/plenary.nvim" }}) -- scala lsp
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
