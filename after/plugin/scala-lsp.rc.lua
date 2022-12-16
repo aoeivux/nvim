@@ -1,6 +1,5 @@
 vim.opt_global.shortmess:remove("F")
 local metals_config = require("metals").bare_config()
-print('ok')
 metals_config.settings = {
   showImplicitArguments = true,
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },

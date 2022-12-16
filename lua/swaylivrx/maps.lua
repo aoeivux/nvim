@@ -53,18 +53,14 @@ keymap("n", "S", ":w<CR>", opts)
 keymap("n", "<leader>l", ":nohl<cr>", opts)
 -- save buffer
 keymap("n", "<leader>w", ":w<cr>", opts)
-
--- exit cur window
-keymap("n", "<leader>q", ":q<cr>", opts)
-
 -- delete cur buffer
 keymap("n", "<leader>d", ":bdelete<cr>", opts)
 
 
 
 -- Navigate buffers
-keymap("n", "<C-n>", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "<C-p>", ":BufferLineCyclePrev<CR>", opts)
+keymap("n", "tn", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "tp", ":BufferLineCyclePrev<CR>", opts)
 
 -- Navigate line
 keymap("n", "H", "^", opts)
@@ -97,8 +93,6 @@ vim.cmd(
 -- latest maps
 local keymap = vim.keymap
 
--- New tab
-keymap.set('n', 'te', ':tabedit')
 
 --rename buffer
 -- file + yourname
@@ -118,11 +112,12 @@ keymap.set('n', '<C-a>', 'gg<S-v>G')
 keymap.set('n', 'dw', 'vb"_d')
 
 -- Split window
-keymap.set('n', 'ss', ':split<Return><C-w>w')
-keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
-
+-- keymap.set('n', 'ss', ':split<Return><C-w>w')
+-- keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
+-- instead of :vsp sp
 -- Resize window
-keymap.set('n', '<C-w><left>', '<C-w>3<')
-keymap.set('n', '<C-w><right>', '<C-w>3>')
-keymap.set('n', '<C-w><up>', '<C-w>3+')
-keymap.set('n', '<C-w><down>', '<C-w>3-')
+keymap.set('n', '<A-left>', '<C-w>3<')
+keymap.set('n', '<A-right>', '<C-w>3>')
+keymap.set('n', '<A-up>', '<C-w>3+')
+keymap.set('n', '<A-down>', '<C-w>3-')
+

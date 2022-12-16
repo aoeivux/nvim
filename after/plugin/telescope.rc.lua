@@ -4,6 +4,7 @@ if not present then
 end
 local actions = require("telescope.actions")
 local previewers = require("telescope.previewers")
+
 local Job = require("plenary.job")
 local new_maker = function(filepath, bufnr, opts)
   filepath = vim.fn.expand(filepath)
@@ -131,4 +132,5 @@ local telescope_config = {
 
 }
 
+require("telescope").load_extension("live_grep_args")
 telescope_setup.setup(telescope_config)

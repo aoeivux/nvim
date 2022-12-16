@@ -74,6 +74,14 @@ return packer.startup(function(use)
 
   use({'scalameta/nvim-metals',requires = { "nvim-lua/plenary.nvim" }}) -- scala lsp
 
+  use 'mg979/vim-visual-multi'
+
+  use 'ggandor/leap.nvim'
+
+  use "nvim-telescope/telescope-live-grep-args.nvim"
+
+  
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
