@@ -1,4 +1,12 @@
 local config = {
+  init_options = {
+     extendedClientCapabilities = {
+        -- Switching to standard LSP progress events (as soon as it lands, see link)
+        -- https://github.com/eclipse/eclipse.jdt.ls/pull/2030#issuecomment-1210815017
+        -- I switching it to true and it looks well.
+        progressReportProvider = true
+      },
+ },
   cmd = {
     'java', -- or '/path/to/java17_or_newer/bin/java'
             -- depends on if `java` is in your $PATH env variable and if it points to the right version.
@@ -16,5 +24,7 @@ local config = {
     '-data', '/opt/homebrew/Cellar/jdtls/1.15.0/libexec/workspace/folder'
   },
 }
+
+
 
 require('jdtls').start_or_attach(config)
