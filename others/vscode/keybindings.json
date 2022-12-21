@@ -455,28 +455,12 @@
 		"when": "notebookEditorFocused && !inputFocus"
 	},
 	{
-		"key": "ctrl+n",
-		"command": "workbench.action.nextEditor"
-	},
-	{
 		"key": "shift+cmd+]",
 		"command": "-workbench.action.nextEditor"
 	},
 	{
-		"key": "ctrl+p",
-		"command": "workbench.action.previousEditor"
-	},
-	{
 		"key": "shift+cmd+[",
 		"command": "-workbench.action.previousEditor"
-	},
-	{
-		"key": "shift+alt+p",
-		"command": "workbench.action.showCommands"
-	},
-	{
-		"key": "ctrl+shift+p",
-		"command": "-workbench.action.showCommands"
 	},
 	{
 		"key": "ctrl+w",
@@ -519,7 +503,7 @@
 		"command": "-workbench.action.closeActiveEditor"
 	},
 	{
-		"key": "alt+.",
+		"key": "alt+f",
 		"command": "editor.action.quickFix",
 		"when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
 	},
@@ -537,7 +521,7 @@
 		"command": "-workbench.action.zoomIn"
 	},
 	{
-		"key": "alt+oem_period",
+		"key": "alt+f",
 		"command": "problems.action.showQuickFixes",
 		"when": "problemFocus"
 	},
@@ -627,5 +611,50 @@
 		"key": "ctrl+alt+down",
 		"command": "-editor.action.insertCursorBelow",
 		"when": "editorTextFocus"
+	},
+	{
+		"key": "alt+z",
+		"command": "workbench.action.toggleZenMode"
+	},
+	{
+		"key": "ctrl+k z",
+		"command": "-workbench.action.toggleZenMode"
+	},
+	{
+		"key": "shift+alt+p",
+		"command": "workbench.action.showCommands"
+	},
+	{
+		"key": "ctrl+shift+p",
+		"command": "-workbench.action.showCommands"
+	},
+	{
+		"key": "ctrl+alt+l",
+		"command": "workbench.action.nextEditor"
+	},
+	{
+		"key": "ctrl+alt+h",
+		"command": "workbench.action.previousEditor"
+	},
+	{
+		"key": "ctrl+alt+b",
+		"command": "java.run",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "alt+b",
+		"command": "-java.run",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "alt+1",
+		"command": "workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled"
+	},
+	{
+		"key": "ctrl+shift+e",
+		"command": "-workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled"
 	}
+
 ]
