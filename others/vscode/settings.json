@@ -24,7 +24,7 @@
         "editor.tabSize": 4
     },
     "[go]": {
-        "editor.defaultFormatter":"golang.go"
+        "editor.defaultFormatter": "golang.go"
     },
 
     "C_Cpp.autocompleteAddParentheses": true,
@@ -68,7 +68,7 @@
     "diffEditor.maxComputationTime": 0,
     "diffEditor.wordWrap": "off",
     "doxdocgen.generic.authorEmail": "atheonealone37@gmail.com",
-    "doxdocgen.generic.authorName": "raven",
+    "doxdocgen.generic.authorName": "swaylivrx",
     "editor.cursorSurroundingLines": 8,
     "editor.cursorBlinking": "solid",
     "editor.cursorStyle": "line",
@@ -79,8 +79,7 @@
     "editor.largeFileOptimizations": false,
     "editor.lineNumbers": "on",
     "editor.mouseWheelZoom": false,
-    "editor.renderWhitespace": "boundary",
-    "editor.snippetSuggestions": "bottom",
+    "editor.snippetSuggestions": "top",
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "on",
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
@@ -101,15 +100,6 @@
     },
     "git.autofetch": true,
     "git.suggestSmartCommit": false,
-    "github.copilot.enable": {
-        "*": true,
-        "c": true,
-        "cpp": true,
-        "go": true,
-        "markdown": false,
-        "plaintext": false,
-        "yaml": false
-    },
     "go.autocompleteUnimportedPackages": true,
     "go.buildOnSave": "off",
     "go.coverageOptions": "showCoveredCodeOnly",
@@ -125,7 +115,6 @@
     "remote.SSH.useLocalServer": false,
     "scss.lint.duplicateProperties": "warning",
     "security.workspace.trust.untrustedFiles": "open",
-    "settingsSync.ignoredSettings": ["editor.fontFamily"],
     "terminal.integrated.fontSize": 14,
     "testMate.cpp.debug.configTemplate": {
         "args": "${argsArray}",
@@ -140,7 +129,7 @@
             "MIMode": "gdb",
             "type": "cppdbg"
         },
-        
+
         "setupCommands": [
             {
                 "description": "Enable pretty-printing for gdb",
@@ -170,7 +159,7 @@
     "vim.handleKeys": {
         "<C-a>": true,
         "<C-f>": false,
-        "<C-i>": true,//后一个光标
+        "<C-i>": true, //后一个光标
         "<C-o>": true, //前一个光标
         "<C-r>": true,
         "<C-s>": false,
@@ -194,6 +183,10 @@
             "commands": ["workbench.action.files.save"]
         },
         {
+            "before": ["Q"],
+            "commands": [":q"]
+        },
+        {
             "before": ["H"],
             "after": ["^"]
         },
@@ -203,7 +196,7 @@
         },
         {
             "before": ["<leader>", "l"],
-            "commands": [":nohl"],
+            "commands": [":nohl"]
         },
         {
             "before": ["<leader>", "f"],
@@ -215,12 +208,12 @@
         },
         {
             "before": ["K"],
-            "after": ["8", "k"],
+            "after": ["3", "k"],
             "silent": true
         },
         {
             "before": ["J"],
-            "after": ["8", "j"],
+            "after": ["3", "j"],
             "silent": true
         },
         {
@@ -258,7 +251,7 @@
             "commands": ["editor.action.marker.prev"]
         },
         {
-            "before": ["]","e"],
+            "before": ["]", "e"],
             "commands": ["editor.action.marker.next"]
         },
         // -- git hunk nav
@@ -294,14 +287,14 @@
             "before": ["<leader>", "r", "n"],
             "commands": ["editor.action.rename"]
         },
-		{
-			"before": ["<leader>", "c", "a"],
-			"commands": ["editor.action.quickFix"]
-		},
-		{
-			"before": ["<leader>", "c", "A"],
-			"commands": ["keyboard-quickfix.openQuickFix"]
-		}
+        {
+            "before": ["<leader>", "c", "a"],
+            "commands": ["editor.action.quickFix"]
+        },
+        {
+            "before": ["<leader>", "c", "A"],
+            "commands": ["keyboard-quickfix.openQuickFix"]
+        }
     ],
     "vim.visualModeKeyBindings": [
         {
@@ -346,7 +339,6 @@
             "before": ["L"],
             "after": ["$"]
         }
-
     ],
     /* vim settings end */
     /* which key bindings */
@@ -423,8 +415,15 @@
             "key": "o",
             "name": "Outline",
             "type": "command"
+        },
+        {
+            "command": "javaProjectExplorer.focus",
+            "key": "j",
+            "name": "Java Project",
+            "type": "command"
         }
     ],
+
     "workbench.iconTheme": "material-icon-theme",
     "workbench.list.automaticKeyboardNavigation": false,
     "workbench.panel.defaultLocation": "bottom",
@@ -437,9 +436,7 @@
     "[dart]": {
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
-        "editor.rulers": [
-           1000,
-        ],
+        "editor.rulers": [1000],
         "editor.selectionHighlight": false,
         "editor.suggest.snippetsPreventQuickSuggestions": false,
         "editor.suggestSelection": "first",
@@ -449,13 +446,50 @@
     "update.mode": "none",
     "terminal.integrated.defaultProfile.osx": "zsh",
     "open-in-browser.default": "google chrome",
-    //自定义底部状态栏颜色
-    "workbench.colorCustomizations": {
+    //自定义主题颜色，底部状态栏颜色、光标颜色、代码选中高亮颜色
+    /*     "workbench.colorCustomizations": {
         "statusBar.background": "#2165da",
         "statusBar.foreground": "#f5f6fa",
         "editorCursor.foreground": "#2165da",
-        "editorCursor.background": "#F5f6fa"
-	},
+        "editorCursor.background": "#F5f6fa",
+		"editor.selectionBackground": "#2e4f79",
+		"editor.selectionForeground": "#f5f6fa",
+		"editor.findMatchHighlightBackground": "#2e4f79",
+	}, */
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.list.automaticKeyboardNavigation": false,
+    "workbench.panel.defaultLocation": "bottom",
+    "workbench.startupEditor": "newUntitledFile",
+    "tabnine.experimentalAutoImports": true,
+    "terminal.external.windowsExec": "",
+    "clang-format.exetutable": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
+    "code-runner.runInTerminal": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [1000],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "update.mode": "none",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "open-in-browser.default": "google chrome",
+
+    //自定义主题颜色，底部状态栏颜色、光标颜色、代码选中高亮颜色
+    /*     "workbench.colorCustomizations": {
+        "statusBar.background": "#2165da",
+        "statusBar.foreground": "#f5f6fa",
+        "editorCursor.foreground": "#2165da",
+        "editorCursor.background": "#F5f6fa",
+		"editor.selectionBackground": "#2e4f79",
+		"editor.selectionForeground": "#f5f6fa",
+		"editor.findMatchHighlightBackground": "#2e4f79",
+	}, */
+
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
             "source": "PowerShell",
@@ -477,25 +511,178 @@
         }
     },
     "terminal.integrated.defaultProfile.windows": "PowerShell",
-    "editor.fontFamily": "'FiraCode Nerd Font', Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'FiraCode Nerd Font', Consolas, 'Courier New', monospace,'Microsoft YaHei'",
     "editor.linkedEditing": true,
     "liveServer.settings.fullReload": true,
     "liveServer.settings.CustomBrowser": "chrome",
-	"liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotShowInfoMsg": true,
     "workbench.editorAssociations": {
-        "*.img": "hexEditor.hexedit"
-	},
-    "clangd.path": "C:\\LLVM-MINGW\\bin\\clangd.exe",
+        "*.img": "hexEditor.hexedit",
+        "*.dat": "hexEditor.hexedit"
+    },
+    "clangd.path": "C:\\Enviroments\\llvm-mingw\\bin\\clangd.exe",
     "vscodeGoogleTranslate.preferredLanguage": "Chinese (Simplified)",
     "editor.fontLigatures": true,
     "editor.detectIndentation": false,
-	"editor.renderWhitespace": "trailing",
-	"html.format.enable": false,
-	"terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
-	"security.workspace.trust.startupPrompt": "always",
-	"security.workspace.trust.enabled": false,
-	"vim.autoindent": false,
-	"explorer.compactFolders": false, //取消缩进小箭头
+    "editor.renderWhitespace": "trailing",
+    "html.format.enable": false,
+    "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
+    "security.workspace.trust.startupPrompt": "always",
+    "security.workspace.trust.enabled": false,
+    "vim.autoindent": false,
+    "explorer.compactFolders": false,
+    "terminal.integrated.enableMultiLinePasteWarning": false, //取消缩进小箭头
+    "sqltools.highlightQuery": false,
+    "security.workspace.trust.banner": "always",
+    "C_Cpp.default.compilerArgs": ["-std=c++11"],
+    "code-runner.executorMap": {
+        "javascript": "node",
+        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "php": "php",
+        "python": "python -u",
+        "perl": "perl",
+        "perl6": "perl6",
+        "ruby": "ruby",
+        "go": "go run",
+        "lua": "lua",
+        "groovy": "groovy",
+        "powershell": "powershell -ExecutionPolicy ByPass -File",
+        "bat": "cmd /c",
+        "shellscript": "bash",
+        "fsharp": "fsi",
+        "csharp": "scriptcs",
+        "vbscript": "cscript //Nologo",
+        "typescript": "ts-node",
+        "coffeescript": "coffee",
+        "scala": "scala",
+        "swift": "swift",
+        "julia": "julia",
+        "crystal": "crystal",
+        "ocaml": "ocaml",
+        "r": "Rscript",
+        "applescript": "osascript",
+        "clojure": "lein exec",
+        "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+        "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+        "racket": "racket",
+        "scheme": "csi -script",
+        "ahk": "autohotkey",
+        "autoit": "autoit3",
+        "dart": "dart",
+        "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+        "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+        "haskell": "runhaskell",
+        "nim": "nim compile --verbosity:0 --hints:off --run",
+        "lisp": "sbcl --script",
+        "kit": "kitc --run",
+        "v": "v run",
+        "sass": "sass --style expanded",
+        "scss": "scss --style expanded",
+        "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+        "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "sml": "cd $dir && sml $fileName"
+    },
+    "clang.cflags": ["-std=c11"],
+    "clang.cxxflags": ["-std=c++11"],
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+    "editor.tokenColorCustomizations": {
+        "comments": {
+            // 设置字体样式 加粗 下划线 斜体等
+            "fontStyle": ""
+            // 设置字体颜色
+            // "foreground": "#4caee2"
+        },
+        "keywords": {
+            // "fontStyle": "bold",
+        },
+        "variables": {
+            // "fontStyle": "bold",
+        },
+        "functions": {
+            // "fontStyle": "bold"
+        },
+        "numbers": {
+            // "fontStyle": ""
+        },
+        "types": {
+            // "fontStyle": "bold"
+        },
+        "[Xcode Partial (Light)]": {
+            "textMateRules": [
+                {
+                    "scope": "comment",
+                    "settings": {}
+                }
+            ]
+        },
+        "[Xcode Partial (Dark)]": {
+            "textMateRules": [
+                {
+                    "scope": "source",
+                    "settings": {
+                        "foreground": "#D4D4D4"
+                    }
+                },
+                {
+                    "scope": "comment",
+                    "settings": {}
+                }
+            ]
+        }
 
-
+        /* 		注释
+        "keywords": "#0a0", // 关键字
+        "variables": "#f00", // 变量名
+        "strings": "#e2d75dbd", // 字符串
+        "functions": "#5b99fcc9", // 函数名
+        "numbers": "#AE81FF" // 数字 
+		"types": "#FF0000" //类型名
+		*/
+	},
+    "breadcrumbs.enabled": false,
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.fontWeight": "400",
+    "boot-java.rewrite.reconcile": true,
+    "java.configuration.maven.userSettings": "D:\\Enviroments\\maven\\apache-maven-3.3.5\\conf\\settings.xml",
+    "spring.initializr.defaultJavaVersion": "8",
+    "emmet.showSuggestionsAsSnippets": true,
+    "cSpell.showAutocompleteSuggestions": true,
+    // xcode theme recommended
+    "terminal.integrated.lineHeight": 1.23,
+    "editor.minimap.enabled": false,
+    "editor.minimap.renderCharacters": false,
+    "editor.overviewRulerBorder": false,
+    "editor.renderLineHighlight": "all",
+    "workbench.editor.tabCloseButton": "left",
+    "workbench.editor.showIcons": false,
+    "window.nativeTabs": true,
+    "editor.guides.indentation": false,
+    "workbench.colorTheme": "Xcode Partial (Dark)",
+    "java.configuration.runtimes": [
+		
+        {
+            "name": "JavaSE-1.8",
+            "path": "C:\\Program Files\\Java\\jdk1.8.0_212",
+            "default": true
+        },
+        {
+            "name": "JavaSE-11",
+            "path": "D:\\Enviroments\\jdk11",
+        },
+	],
+	"workbench.editor.enablePreview": false,
+	"[xml]": {
+		"editor.defaultFormatter": "SimonSiefke.prettier-vscode"
+	}
 }
