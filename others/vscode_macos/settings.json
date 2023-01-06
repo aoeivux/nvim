@@ -1,0 +1,876 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatterOnSave": true,
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.python",
+		"editor.insertSpaces": true,
+		"editor.tabSize": 4,
+		"editor.autoSurround": "brackets"
+	},
+	"[java]": {
+		"editor.defaultFormatter": "redhat.java",
+		"editor.tabSize": 4
+	},
+	"[cpp]": {
+		"editor.defaultFormatter": "xaver.clang-format",
+		"editor.tabSize": 4
+	},
+	"[c]": {
+		"editor.defaultFormatter": "xaver.clang-format",
+		"editor.tabSize": 4
+	},
+	"[cc]": {
+		"editor.defaultFormatter": "xaver.clang-format",
+		"editor.tabSize": 4
+	},
+	"[go]": {
+		"editor.defaultFormatter": "golang.go"
+	},
+	"C_Cpp.autocompleteAddParentheses": true,
+	"C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google}",
+	"C_Cpp.formatting": "Default",
+	"c-cpp-compile-run.c-compiler": "C:\\Users\\xean\\scoop\\apps\\gcc\\11.2.0\\bin\\gcc.exe",
+	"c-cpp-compile-run.cpp-compiler": "C:\\Users\\xean\\scoop\\apps\\gcc\\11.2.0\\bin\\g++.exe",
+	"C_Cpp.intelliSenseEngine": "Disabled",
+	"C_Cpp.intelliSenseEngineFallback": "Enabled",
+	"C_Cpp.vcFormat.indent.braces": true,
+	"C_Cpp.vcFormat.indent.caseContentsWhenBlock": true,
+	"clang-format.executable": "",
+	"clangd.arguments": [
+		// "--compile-commands-dir=${workspaceFolder}/build", // compile data base path
+		"--query-driver=/usr/bin/clang-*,/usr/bin/g++-*",
+		"--background-index", // 后台建立索引，并持久化到disk
+		"--clang-tidy", // 开启clang-tidy
+		// 指定clang-tidy的检查参数， 摘抄自cmu15445. 全部参数可参考 https://clang.llvm.org/extra/clang-tidy/checks
+		"--clang-tidy-checks=bugprone-*, clang-analyzer-*, google-*, modernize-*, performance-*, portability-*, readability-*, -bugprone-too-small-loop-variable, -clang-analyzer-cplusplus.NewDelete, -clang-analyzer-cplusplus.NewDeleteLeaks, -modernize-use-nodiscard, -modernize-avoid-c-arrays, -readability-magic-numbers, -bugprone-branch-clone, -bugprone-signed-char-misuse, -bugprone-unhandled-self-assignment, -clang-diagnostic-implicit-int-float-conversion, -modernize-use-auto, -modernize-use-trailing-return-type, -readability-convert-member-functions-to-static, -readability-make-member-function-const, -readability-qualified-auto, -readability-redundant-access-specifiers,",
+		"--completion-style=detailed",
+		"--cross-file-rename=true",
+		"--header-insertion=iwyu",
+		"--pch-storage=memory",
+		// 启用这项时，补全函数时，将会给参数提供占位符，键入后按 Tab 可以切换到下一占位符
+		"--function-arg-placeholders=false",
+		"--log=verbose",
+		"--ranking-model=decision_forest",
+		// 输入建议中，已包含头文件的项与还未包含头文件的项会以圆点加以区分
+		"--header-insertion-decorators",
+		"-j=12",
+		"--pretty"
+		// 建议排序模型
+	],
+	"cmake.build.workspaceTargets": [],
+	"cmake.buildDirectory": "${workspaceFolder}/cmake-build",
+	"cmake.configureOnOpen": true,
+	"cmake.copyCompileCommands": "${workspaceFolder}/build/compile_commands.json",
+	"cmake.cpptools.intelliSenseMode": "gcc-x64",
+	"cmake.default.buildDirectory": "${workspaceFolder}/cmake-build",
+	"debug.console.fontSize": 14,
+	"diffEditor.maxComputationTime": 0,
+	"diffEditor.wordWrap": "off",
+	"doxdocgen.generic.authorEmail": "atheonealone37@gmail.com",
+	"doxdocgen.generic.authorName": "swaylivrx",
+	"editor.cursorSurroundingLines": 8,
+	"editor.cursorBlinking": "solid",
+	"editor.cursorStyle": "line",
+	"editor.fontSize": 14,
+	"editor.formatOnSaveMode": "modifications",
+	"editor.insertSpaces": false,
+	"editor.largeFileOptimizations": false,
+	"editor.lineNumbers": "on",
+	"editor.mouseWheelZoom": false,
+	"editor.suggestSelection": "recentlyUsed",
+	"editor.tabCompletion": "on",
+	"editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+	"errorLens.enabled": true,
+	"errorLens.enabledDiagnosticLevels": [
+		"error",
+		"warning"
+	],
+	"explorer.confirmDelete": false,
+	"explorer.confirmDragAndDrop": false,
+	"fileheader.Author": "zhu.yongxing",
+	"fileheader.LastModifiedBy": "zhu.yongxing",
+	"files.autoGuessEncoding": true,
+	"files.eol": "\n",
+	"files.exclude": {
+		"**/.classpath": true,
+		"**/.factorypath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/*.class": true,
+		"**/*.exe": true
+	},
+	"git.autofetch": true,
+	"git.suggestSmartCommit": false,
+	"go.autocompleteUnimportedPackages": true,
+	"go.buildOnSave": "off",
+	"go.coverageOptions": "showCoveredCodeOnly",
+	"go.toolsManagement.autoUpdate": true,
+	"prettier.tabWidth": 4,
+	"python.languageServer": "Default",
+	"python.terminal.activateEnvironment": false,
+	"remote.SSH.configFile": "~/.ssh/config",
+	"remote.SSH.remotePlatform": {
+		"8.130.175.163": "linux"
+	},
+	"remote.SSH.showLoginTerminal": true,
+	"remote.SSH.useLocalServer": false,
+	"scss.lint.duplicateProperties": "warning",
+	"security.workspace.trust.untrustedFiles": "open",
+	"terminal.integrated.fontSize": 14,
+	"testMate.cpp.debug.configTemplate": {
+		"args": "${argsArray}",
+		"cwd": "${cwd}",
+		"darwin": {
+			"MIMode": "lldb",
+			"type": "cppdbg"
+		},
+		"env": "${envObj}",
+		"environment": "${envObjArray}",
+		"linux": {
+			"MIMode": "gdb",
+			"type": "cppdbg"
+		},
+		"setupCommands": [
+			{
+				"description": "Enable pretty-printing for gdb",
+				"ignoreFailures": true,
+				"text": "-enable-pretty-printing"
+			}
+		],
+		"sourceFileMap": "${sourceFileMapObj}",
+		"type": "cppvsdbg",
+		"win32": {
+			"type": "cppvsdbg"
+		}
+	},
+	"testMate.cpp.log.logpanel": true,
+	"testMate.cpp.log.logSentry": "enable",
+	/* vim settings start */
+	"vim.camelCaseMotion.enable": true,
+	"vim.easymotion": false,
+	"vim.statusBarColorControl": false,
+	"vim.foldfix": true, // to avoid fold open up auto camatically
+	"vim.sneak": false,
+	"vim.surround": true,
+	"vim.useCtrlKeys": false,
+	"vim.useSystemClipboard": true,
+	"vim.vimrc.enable": false,
+	// "vim.vimrc.path": "/Users/nero/.vsvimrc", // only for macOs
+	"vim.handleKeys": {
+		"<C-a>": true,
+		"<C-f>": false,
+		"<C-i>": true, //后一个光标
+		"<C-o>": true, //前一个光标
+		"<C-r>": true,
+		"<C-s>": false,
+		"<C-v>": true,
+		"<C-w>": true,
+		"<C-u>": true
+	},
+	"vim.hlsearch": true,
+	"vim.incsearch": true,
+	"vim.leader": ";",
+	"vim.normalModeKeyBindings": [
+		{
+			// which key
+			"before": [
+				"<space>"
+			],
+			"commands": [
+				"whichkey.show"
+			]
+		}
+	],
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": [
+				"S"
+			],
+			"commands": [
+				"workbench.action.files.save"
+			]
+		},
+		{
+			"before": [
+				"Q"
+			],
+			"commands": [
+				":q"
+			]
+		},
+		{
+			"before": [
+				"H"
+			],
+			"after": [
+				"^"
+			]
+		},
+		{
+			"before": [
+				"L"
+			],
+			"after": [
+				"$"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"l"
+			],
+			"commands": [
+				":nohl"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"f"
+			],
+			"commands": [
+				"editor.action.formatDocument"
+			]
+		},
+		{
+			"before": [
+				"<C-a>"
+			],
+			"after": [
+				"g",
+				"g",
+				"V",
+				"G"
+			]
+		},
+		{
+			"before": [
+				"K"
+			],
+			"after": [
+				"3",
+				"k"
+			],
+			"silent": true
+		},
+		{
+			"before": [
+				"J"
+			],
+			"after": [
+				"3",
+				"j"
+			],
+			"silent": true
+		},
+		{
+			"before": [
+				"<leader>",
+				"u"
+			],
+			"commands": [
+				"editor.action.referenceSearch.trigger"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"U"
+			],
+			"commands": [
+				"references-view.findReferences"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"i",
+				"n"
+			],
+			"commands": [
+				"references-view.showCallHierarchy"
+			]
+		},
+		// -- run
+		{
+			"before": [
+				"<leader>",
+				"r"
+			],
+			"commands": [
+				"workbench.action.files.save",
+				"workbench.action.debug.run"
+			]
+		},
+		// -- debug
+		{
+			"before": [
+				"<leader>",
+				"d",
+				"b"
+			],
+			"commands": [
+				"editor.debug.action.toggleBreakpoint"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"d",
+				"c"
+			],
+			"commands": [
+				"editor.debug.action.conditionalBreakpoint"
+			]
+		},
+		// -- problem nav
+		{
+			"before": [
+				"[",
+				"e"
+			],
+			"commands": [
+				"editor.action.marker.prev"
+			]
+		},
+		{
+			"before": [
+				"]",
+				"e"
+			],
+			"commands": [
+				"editor.action.marker.next"
+			]
+		},
+		// -- git hunk nav
+		{
+			"before": [
+				"<leader>",
+				"h",
+				"k"
+			],
+			"commands": [
+				"workbench.action.editor.previousChange",
+				"editor.action.dirtydiff.previous"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"h",
+				"j"
+			],
+			"commands": [
+				"workbench.action.editor.nextChange",
+				"editor.action.dirtydiff.next"
+			]
+		},
+		// git (un)stage
+		{
+			"before": [
+				"<leader>",
+				"h",
+				"s"
+			],
+			"commands": [
+				"git.stage"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"h",
+				"u"
+			],
+			"commands": [
+				"git.unstage"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"h",
+				"r"
+			],
+			"commands": [
+				"git.revertSelecFtedRanges"
+			]
+		},
+		// -- rename symbol
+		{
+			"before": [
+				"<leader>",
+				"r",
+				"n"
+			],
+			"commands": [
+				"editor.action.rename"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"c",
+				"a"
+			],
+			"commands": [
+				"editor.action.quickFix"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"c",
+				"A"
+			],
+			"commands": [
+				"keyboard-quickfix.openQuickFix"
+			]
+		}
+	],
+	"vim.visualModeKeyBindings": [
+		{
+			// which key
+			"before": [
+				"<space>"
+			],
+			"commands": [
+				"whichkey.show"
+			]
+		},
+		// repeatly indent in visual mode
+		{
+			"before": [
+				">"
+			],
+			"commands": [
+				"editor.action.indentLines"
+			]
+		},
+		{
+			"before": [
+				"<"
+			],
+			"commands": [
+				"editor.action.outdentLines"
+			]
+		}
+	],
+	"vim.visualModeKeyBindingsNonRecursive": [
+		{
+			"before": [
+				"<leader>",
+				"f"
+			],
+			"commands": [
+				"editor.action.formatSelection"
+			]
+		},
+		{
+			"before": [
+				"K"
+			],
+			"after": [
+				"3",
+				"k"
+			],
+			"silent": true
+		},
+		{
+			"before": [
+				"J"
+			],
+			"after": [
+				"3",
+				"j"
+			]
+		},
+		{
+			// p action will not override clipboard content
+			"before": [
+				"p"
+			],
+			"after": [
+				"p",
+				"g",
+				"v",
+				"y"
+			]
+		},
+		{
+			"before": [
+				"H"
+			],
+			"after": [
+				"^"
+			]
+		},
+		{
+			"before": [
+				"L"
+			],
+			"after": [
+				"$"
+			]
+		}
+	],
+	/* vim settings end */
+	/* which key bindings */
+	"whichkey.bindings": [
+		{
+			"key": "e",
+			"name": "Show tree/explorer view",
+			"type": "conditional",
+			"bindings": [
+				{
+					"key": "",
+					"name": "default",
+					"type": "command",
+					"command": "workbench.view.explorer"
+				},
+				{
+					"key": "when:sideBarVisible && explorerViewletVisible",
+					"name": "Hide explorer",
+					"type": "command",
+					"command": "workbench.action.toggleSidebarVisibility"
+				}
+			]
+		},
+		{
+			"key": "g",
+			"name": "GitRepo",
+			"type": "command",
+			"command": "workbench.view.scm"
+		},
+		{
+			"key": "G",
+			"name": "Goto Marketplace",
+			"type": "command",
+			"command": "workbench.view.extensions"
+		},
+		{
+			"command": "workbench.view.search",
+			"key": "w",
+			"name": "Search Word",
+			"type": "command"
+		},
+		{
+			"command": "search.action.openEditor",
+			"key": "f",
+			"name": "New Search Editor",
+			"type": "command"
+		},
+		{
+			"command": "workbench.action.gotoSymbol",
+			"name": "GotoSymbol",
+			"key": "s",
+			"type": "command"
+		},
+		{
+			"command": "workbench.action.showAllSymbols",
+			"key": "S",
+			"name": "Search project symbol",
+			"type": "command"
+		},
+		{
+			"command": "workbench.action.quickOpen",
+			"key": "r",
+			"name": "Recent Files",
+			"type": "command"
+		},
+		{
+			"command": "code-runner.run",
+			"key": "t",
+			"name": "Code Test",
+			"type": "command"
+		},
+		{
+			"command": "workbench.action.toggleAuxiliaryBar",
+			"key": "o",
+			"name": "Outline",
+			"type": "command"
+		},
+		{
+			"command": "javaProjectExplorer.focus",
+			"key": "j",
+			"name": "Java Project",
+			"type": "command"
+		}
+	],
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.list.automaticKeyboardNavigation": false,
+	"workbench.panel.defaultLocation": "bottom",
+	"workbench.startupEditor": "newUntitledFile",
+	"tabnine.experimentalAutoImports": true,
+	"terminal.external.windowsExec": "",
+	"clang-format.exetutable": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
+	"code-runner.runInTerminal": true,
+	"code-runner.saveAllFilesBeforeRun": true,
+	"[dart]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true,
+		"editor.rulers": [
+			1000
+		],
+		"editor.selectionHighlight": false,
+		"editor.suggest.snippetsPreventQuickSuggestions": false,
+		"editor.suggestSelection": "first",
+		"editor.tabCompletion": "onlySnippets",
+		"editor.wordBasedSuggestions": false
+	},
+	"update.mode": "none",
+	"terminal.integrated.defaultProfile.osx": "zsh",
+	"open-in-browser.default": "google chrome",
+	//自定义主题颜色，底部状态栏颜色、光标颜色、代码选中高亮颜色 (Darcula Theme)
+	"workbench.colorCustomizations": {
+		// "statusBar.background": "#2165da",
+		// "statusBar.foreground": "#f5f6fa",
+		"statusBar.background": "#1e1f22", // 底部状态栏
+		"titleBar.activeBackground": "#202323", // 顶部标题栏
+		"titleBar.inactiveBackground": "#2b2d30",
+		"titleBar.border": "#1e1f22",
+		"editor.background": "#1e1f22", // 编辑区
+		"editor.lineHighlightBackground": "#2b2d30", //光标所在行高亮
+		"terminal.background": "#1e1f22", // 终端
+		"panel.background": "#1e1f22", //终端上小面板
+		"sideBar.background": "#202323", // 左侧边栏
+		"editorGroupHeader.tabsBackground": "#1e1f22", // tab栏
+		"editorGroupHeader.tabsBorder": "#1e1f22",
+		"editorGroupHeader.border": "#393b40", // tab栏边界
+		"tab.activeBackground": "#1e1f22", //tab文件
+		"tab.inactiveBackground": "#1e1f22",
+		"tab.activeBorder": "#54ff6b", // tab 底部边界
+		"tab.activeBorderTop": "#1e1f22",
+		"editorGutter.background": "#1e1f22", //行数、导航线
+		"activityBar.background": "#2b2d30",
+		"editorCursor.foreground": "#2165da",
+		"editorCursor.background": "#F5f6fa",
+		"editor.selectionBackground": "#214283",
+		"editor.selectionForeground": "#f5f6fa",
+		"editor.findMatchHighlightBackground": "#214283",
+		"menu.background": "#2b2d30", //菜单项
+		"badge.background": "#305fb9", // 信息标签
+		"editorSuggestWidget.background": "#2b2d30", //补全建议
+		"editorSuggestWidget.border": "#2b2d30", //补全建议边界
+		"sideBarSectionHeader.background": "#2b2d30",
+		"editorWidget.background": "#1e1f22", //Ctrl+F查找、ctrl+shift+p、which-key弹出窗口的背景颜色
+		"editorWidget.border": "#1e1f22",
+		"input.background": "#1e1f22",
+		"breadcrumb.background": "#1e1f22",
+		
+		
+	},
+	"terminal.integrated.profiles.windows": {
+		"PowerShell": {
+			"source": "PowerShell",
+			"icon": "terminal-powershell"
+		},
+		"Command Prompt": {
+			"path": [
+				"${env:windir}\\Sysnative\\cmd.exe",
+				"${env:windir}\\System32\\cmd.exe"
+			],
+			"args": [],
+			"icon": "terminal-cmd"
+		},
+		"Git Bash": {
+			"source": "Git Bash"
+		},
+		"Windows PowerShell": {
+			"path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+		}
+	},
+	"terminal.integrated.defaultProfile.windows": "PowerShell",
+	"editor.fontFamily": "'FiraCode Nerd Font', Consolas, 'Courier New', monospace,'Microsoft YaHei'",
+	"editor.linkedEditing": true,
+	"liveServer.settings.fullReload": true,
+	"liveServer.settings.CustomBrowser": "chrome",
+	"liveServer.settings.donotShowInfoMsg": true,
+	"workbench.editorAssociations": {
+		"*.img": "hexEditor.hexedit",
+		"*.dat": "hexEditor.hexedit"
+	},
+	"clangd.path": "/Users/nero/Library/Application Support/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/15.0.3/clangd_15.0.3/bin/clangd",
+	"vscodeGoogleTranslate.preferredLanguage": "Chinese (Simplified)",
+	"editor.fontLigatures": true,
+	"editor.detectIndentation": false,
+	"editor.renderWhitespace": "trailing",
+	"html.format.enable": false,
+	"terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
+	"security.workspace.trust.startupPrompt": "always",
+	"security.workspace.trust.enabled": false,
+	"vim.autoindent": false,
+	"explorer.compactFolders": false,
+	"terminal.integrated.enableMultiLinePasteWarning": false, //取消缩进小箭头
+	"python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniconda/base/envs/d2l/bin/python",
+	"security.workspace.trust.banner": "always",
+	"C_Cpp.default.compilerArgs": [
+		"-std=c++11"
+	],
+	"code-runner.executorMap": {
+		"javascript": "node",
+		"java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+		"c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+		"cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+		"objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+		"php": "php",
+		"python": "python -u",
+		"perl": "perl",
+		"perl6": "perl6",
+		"ruby": "ruby",
+		"go": "go run",
+		"lua": "lua",
+		"groovy": "groovy",
+		"powershell": "powershell -ExecutionPolicy ByPass -File",
+		"bat": "cmd /c",
+		"shellscript": "bash",
+		"fsharp": "fsi",
+		"csharp": "scriptcs",
+		"vbscript": "cscript //Nologo",
+		"typescript": "ts-node",
+		"coffeescript": "coffee",
+		"scala": "scala",
+		"swift": "swift",
+		"julia": "julia",
+		"crystal": "crystal",
+		"ocaml": "ocaml",
+		"r": "Rscript",
+		"applescript": "osascript",
+		"clojure": "lein exec",
+		"haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+		"rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+		"racket": "racket",
+		"scheme": "csi -script",
+		"ahk": "autohotkey",
+		"autoit": "autoit3",
+		"dart": "dart",
+		"pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+		"d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+		"haskell": "runhaskell",
+		"nim": "nim compile --verbosity:0 --hints:off --run",
+		"lisp": "sbcl --script",
+		"kit": "kitc --run",
+		"v": "v run",
+		"sass": "sass --style expanded",
+		"scss": "scss --style expanded",
+		"less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+		"FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+		"fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+		"fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+		"fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+		"sml": "cd $dir && sml $fileName"
+	},
+	"clang.cflags": [
+		"-std=c11"
+	],
+	"clang.cxxflags": [
+		"-std=c++11"
+	],
+	"files.watcherExclude": {
+		"**/.bloop": true,
+		"**/.metals": true,
+		"**/.ammonite": true
+	},
+	"editor.tokenColorCustomizations": {
+		"comments": {
+			// 设置字体样式 加粗 下划线 斜体等
+			"fontStyle": ""
+			// 设置字体颜色
+			// "foreground": "#4caee2"
+		},
+		"keywords": {
+			// "fontStyle": "bold",
+		},
+		"variables": {
+			// "fontStyle": "bold",
+		},
+		"functions": {
+			// "fontStyle": "bold"
+		},
+		"numbers": {
+			// "fontStyle": ""
+		},
+		"types": {
+			"fontStyle": "italic"
+			// "fontStyle": "bold"
+		},
+		"[Xcode Partial (Light)]": {
+			"textMateRules": [
+				{
+					"scope": "comment",
+					"settings": {}
+				}
+			]
+		},
+		"[Xcode Partial (Dark)]": {
+			"textMateRules": [
+				{
+					"scope": "source",
+					"settings": {
+						"foreground": "#D4D4D4"
+					}
+				},
+				{
+					"scope": "comment",
+					"settings": {}
+				}
+			]
+		}
+		/* 		注释
+        "keywords": "#0a0", // 关键字
+        "variables": "#f00", // 变量名
+        "strings": "#e2d75dbd", // 字符串
+        "functions": "#5b99fcc9", // 函数名
+        "numbers": "#AE81FF" // 数字 
+		"types": "#FF0000" //类型名
+		*/
+	},
+	"editor.scrollbar.vertical": "hidden",
+	"editor.scrollbar.horizontal": "hidden",
+	"boot-java.rewrite.reconcile": true,
+	"java.configuration.maven.userSettings": "D:\\Enviroments\\maven\\apache-maven-3.3.5\\conf\\settings.xml",
+	"spring.initializr.defaultJavaVersion": "8",
+	"emmet.showSuggestionsAsSnippets": true,
+	"cSpell.showAutocompleteSuggestions": true,
+	"editor.renderLineHighlight": "all",
+	"workbench.editor.tabCloseButton": "right",
+	"workbench.editor.showIcons": false,
+	"editor.guides.indentation": false,
+	"[vue]": {
+		"editor.defaultFormatter": "Vue.volar"
+	},
+	"terminal.integrated.scrollback": 5000,
+	"spring.initializr.defaultGroupId": "com.aoeivux",
+	"spring.initializr.defaultLanguage": "Java",
+	"editor.suggest.showStatusBar": true,
+	"editor.suggest.showTypeParameters": false,
+	"files.autoSave": "onFocusChange",
+	"extensions.experimental.affinity": {
+		"vscodevim.vim": 1,
+		"asvetliakov.vscode-neovim": 1
+	},
+	"settingsSync.ignoredSettings": [
+		"-statsBar.memoUsage.format"
+	],
+	"editor.acceptSuggestionOnCommitCharacter": false,
+	"material-icon-theme.hidesExplorerArrows": false,
+	"material-icon-theme.folders.theme": "specific",
+	"material-icon-theme.activeIconPack": "angular",
+	"workbench.colorTheme": "JetBrains Darcula Theme",
+	"indentRainbow.indicatorStyle": "light",
+	"indentRainbow.lightIndicatorStyleLineWidth": 2,
+	"indentRainbow.colors": [
+		"rgba(255,255,64,0.07)",
+		"rgba(127,255,127,0.07)",
+		"rgba(255,127,255,0.07)",
+		"rgba(79,236,236,0.07)"
+	],
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"breadcrumbs.enabled": true,
+	"workbench.editor.tabSizing": "fit",
+	//解决macos titlebar无法自定义问题
+	"window.nativeTabs": false,
+	"window.nativeFullScreen": true
+}
