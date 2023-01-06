@@ -55,7 +55,7 @@ return packer.startup(function(use)
 
   use "folke/which-key.nvim" -- which  key
 
-  use {"kyazdani42/nvim-tree.lua",branch = "1406-allow-folder_arrow"}
+  use "kyazdani42/nvim-tree.lua"
 
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
   use "nvim-lualine/lualine.nvim" -- status line
@@ -71,8 +71,6 @@ return packer.startup(function(use)
   use 'sainnhe/gruvbox-material'
   
   use 'mfussenegger/nvim-jdtls' -- java lsp 
-
-  use({'scalameta/nvim-metals',requires = { "nvim-lua/plenary.nvim" }}) -- scala lsp
 
   use 'mg979/vim-visual-multi'
 

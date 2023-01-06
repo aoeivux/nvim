@@ -64,6 +64,8 @@ nvim_lsp.clangd.setup{
 
 nvim_lsp.pyright.setup{}
 
+nvim_lsp.vuels.setup{}
+
 
 nvim_lsp.sumneko_lua.setup {
   on_attach = on_attach,
