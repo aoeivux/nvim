@@ -121,3 +121,17 @@ keymap.set('n', '<A-right>', '<C-w>3>')
 keymap.set('n', '<A-up>', '<C-w>3+')
 keymap.set('n', '<A-down>', '<C-w>3-')
 
+
+
+
+-- Leap.nvim Mappings
+keymap.set('n', 'f', '<Plug>(leap-forward-to)', {noremap = true, silent=true})
+keymap.set('x', 'f', '<Plug>(leap-forward-to)', {noremap = true, silent=true})
+keymap.set('o', 'f', '<Plug>(leap-forward-to)', {noremap = true, silent=true})
+keymap.set('n', 'F', '<Plug>(leap-backward-to)', {noremap = true, silent=true})
+keymap.set('x', 'F', '<Plug>(leap-backward-to)', {noremap = true, silent=true})
+keymap.set('o', 'F', '<Plug>(leap-backward-to)', {noremap = true, silent=true})
+keymap.set('n', 'gs', '<Plug>(leap-cross-window)', {noremap = true, silent=true})
+keymap.set('x', 'gs', '<Plug>(leap-cross-window)', {noremap = true, silent=true})
+keymap.set('o', 'gs', '<Plug>(leap-cross-window)', {noremap = true, silent=true})
+keymap.set('o', 'gs', '<Plug>(leap-repeat)', {noremap = true, silent=true})
