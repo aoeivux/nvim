@@ -205,18 +205,6 @@ local plugins = {
       require("core.utils").load_mappings "whichkey"
     end,
   },
-  -- lastplace
-  ["ethanholz/nvim-lastplace"] = {
-    setup = function()
-      local ok, lastplace = pcall(require, "nvim-lastplace")
-      if not ok then
-        print("not ok lastplace")
-      end
-      if ok then
-        lastplace.setup()
-      end
-    end,
-  },
 }
 
 -- Load all plugins
