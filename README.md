@@ -3,8 +3,6 @@
 ### Introduction
 Configuration is based on [nvchad](https://github.com/NvChad/NvChad), which is a great framework and highly recommended to get to use it.
 
-### Showcase
-
 ### Install
 Install it & it's plugins with:
 
