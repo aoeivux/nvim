@@ -20,7 +20,7 @@ local options = {
   update_cwd = true,
   update_focused_file = {
     enable = true,
-    update_cwd = false,
+    update_cwd = true,
   },
   view = {
     adaptive_size = true,
@@ -32,7 +32,6 @@ local options = {
       list = {
         -- user mappings go here
         { key = { "l", "<CR>", "o" }, action = "edit" },
-        { key = "h", action = "close_node" },
         { key = "v", action = "vsplit" },
         { key = "O", action = "cd" },
       },
