@@ -7,28 +7,20 @@ end
 require("base46").load_highlight "nvimtree"
 
 local options = {
-  auto_reload_on_write = true,
-  disable_netrw = false,
-  hijack_cursor = false,
+  filters = {
+    dotfiles = false,
+    exclude = { vim.fn.stdpath "config" .. "/lua/custom" },
+  },
+  disable_netrw = true,
   hijack_netrw = true,
+  open_on_setup = false,
+  ignore_ft_on_setup = { "alpha" },
+  hijack_cursor = true,
   hijack_unnamed_buffer_when_opening = false,
-  ignore_buffer_on_setup = false,
-  open_on_setup = true,
-  open_on_setup_file = false,
-  sort_by = "name",
-  root_dirs = {},
-  prefer_startup_root = false,
-  sync_root_with_cwd = false,
-  reload_on_bufenter = false,
-  respect_buf_cwd = false,
-  on_attach = "disable",
-  remove_keymaps = false,
-  select_prompts = false,
-  -- ignore_ft_on_setup = { "alpha" },
   update_cwd = true,
   update_focused_file = {
     enable = true,
-    update_cwd = true,
+    update_cwd = false,
   },
   view = {
     adaptive_size = true,
