@@ -3,7 +3,7 @@ if (not status) then return end
 
 local keymap = vim.keymap.set
 
-saga.init_lsp_saga({
+saga.setup({
   -- Options with default value
 -- "single" | "double" | "rounded" | "bold" | "plus"
 border_style = "single",
