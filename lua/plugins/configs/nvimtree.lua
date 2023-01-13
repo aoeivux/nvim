@@ -32,6 +32,7 @@ local options = {
       list = {
         -- user mappings go here
         { key = { "l", "<CR>", "o" }, action = "edit" },
+        { key = "h", action = "dir_up" },
         { key = "v", action = "vsplit" },
         { key = "O", action = "cd" },
       },
