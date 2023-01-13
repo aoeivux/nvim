@@ -4,8 +4,4 @@ __pycache__/
 .local_history/ 
 .vim/
 plugin
-custom
-spell
-ftplugin
-coc-settings.json
 .luarc.json
