@@ -26,6 +26,9 @@ M.general = {
     ["<C-l>"] = { "<C-w>l", "window right" },
     ["<C-j>"] = { "<C-w>j", "window down" },
     ["<C-k>"] = { "<C-w>k", "window up" },
+       
+    ["J"] = { "6j", "quick move 6 line down" },
+    ["K"] = { "6k", "quick move 6 line up" },
 
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "save file" },
@@ -63,6 +66,9 @@ M.general = {
   t = { ["<C-x>"] = { termcodes "<C-\\><C-N>", "escape terminal mode" } },
 
   v = {
+    ["J"] = { "6j", "quick move 6 line down" },
+    ["K"] = { "6k", "quick move 6 line up" },
+
     ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
   },
@@ -149,7 +155,7 @@ M.lspconfig = {
       "lsp definition",
     },
 
-    ["K"] = {
+    ["gh"] = {
       function()
         vim.lsp.buf.hover()
       end,
@@ -177,7 +183,7 @@ M.lspconfig = {
       "lsp definition type",
     },
 
-    ["<leader>ra"] = {
+    ["<leader>rn"] = {
       function()
         require("nvchad_ui.renamer").open()
       end,
@@ -205,14 +211,14 @@ M.lspconfig = {
       "floating diagnostic",
     },
 
-    ["[d"] = {
+    ["[e"] = {
       function()
         vim.diagnostic.goto_prev()
       end,
       "goto prev",
     },
 
-    ["]d"] = {
+    ["]e"] = {
       function()
         vim.diagnostic.goto_next()
       end,

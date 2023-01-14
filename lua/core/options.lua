@@ -11,6 +11,7 @@ opt.backup = false
 opt.scrolloff = 8
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
+opt.wrap = false
 
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
@@ -44,7 +45,7 @@ opt.undofile = true
 
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
-
+opt.swapfile = false
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
