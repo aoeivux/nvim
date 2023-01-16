@@ -26,7 +26,9 @@ M.general = {
     ["<C-l>"] = { "<C-w>l", "window right" },
     ["<C-j>"] = { "<C-w>j", "window down" },
     ["<C-k>"] = { "<C-w>k", "window up" },
-       
+
+    ["H"] = { "^", "head of line" },
+    ["L"] = { "$", "tail of line" },
     ["J"] = { "6j", "quick move 6 line down" },
     ["K"] = { "6k", "quick move 6 line up" },
 
@@ -68,7 +70,9 @@ M.general = {
   v = {
     ["J"] = { "6j", "quick move 6 line down" },
     ["K"] = { "6k", "quick move 6 line up" },
-
+    ["H"] = { "^", "head of line" },
+    ["L"] = { "$", "tail of line" },
+     
     ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
   },

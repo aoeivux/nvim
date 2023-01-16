@@ -8,6 +8,11 @@ M.zen = {
   }
 }
 
+M.gernal = {
+  n = {
+    ["Q"] = {"cmd :q! <CR>", "quit current file"},
+  }
+}
 
 
 return M
