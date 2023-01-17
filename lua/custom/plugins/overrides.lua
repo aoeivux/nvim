@@ -12,9 +12,11 @@ M.mason = {
     "deno",
     "json-lsp",
     "tailwindcss-language-server",
-    
     -- java web application
     "jdtls",
+    "gopls",
+    "rust-analyzer",
+    "go-debug-adapter",
   },
 }
 

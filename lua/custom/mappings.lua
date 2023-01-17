@@ -10,9 +10,14 @@ M.zen = {
 
 M.gernal = {
   n = {
-    ["Q"] = {"cmd :q! <CR>", "quit current file"},
+    ["Q"] = {"<cmd> q! <CR>", "quit current file"},
   }
 }
 
+M.rnvimr = {
+  n = {
+    [";ra"] = {"<cmd> RnvimrToggle <CR>", "Rnvimr File Manager Toggle"}
+  }
+}
 
 return M

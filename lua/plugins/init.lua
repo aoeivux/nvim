@@ -1,3 +1,4 @@
+local overrides = require "custom.plugins.overrides"
 local plugins = {
 
   ["nvim-lua/plenary.nvim"] = { module = "plenary" },
@@ -158,6 +159,7 @@ local plugins = {
     config = function()
       require "plugins.configs.alpha"
     end,
+    override_options = overrides.alpha,
   },
 
   ["numToStr/Comment.nvim"] = {

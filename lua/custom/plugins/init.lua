@@ -7,8 +7,6 @@ return {
   },
 
   ["goolord/alpha-nvim"] = {
-    disable = false,
-    cmd = "Alpha",
     override_options = overrides.alpha,
   },
 
@@ -39,5 +37,18 @@ return {
       require "custom.plugins.null-ls"
     end,
   },
+
+  ["kevinhwang91/rnvimr"] = {},
+
+  ["kylechui/nvim-surround"] = {
+    after = "nvim-lspconfig",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+  },
+
 
 }
