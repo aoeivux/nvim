@@ -11,6 +11,11 @@ M.zen = {
 M.gernal = {
   n = {
     ["Q"] = {"<cmd> q! <CR>", "quit current file"},
+  },
+  v = {
+    -- Stay in indent mode
+    [">"] = {">gv", "stay in indent"},
+    ["<"] = {"<gv", "stay in indent"},
   }
 }
 
