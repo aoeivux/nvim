@@ -18,10 +18,4 @@ autocmd(
 
 -- auto change dir noautochdir
 vim.api.nvim_command('set noacd')
-vim.cmd [[
-autocmd VimEnter * set noacd
-]]
-
-
-
-
+vim.cmd [[ autocmd VimEnter * set noacd ]]

@@ -16,7 +16,7 @@ M.mason = {
     "jdtls",
     "gopls",
     "rust-analyzer",
-    "go-debug-adapter",
+    "delve",
   },
 }
 

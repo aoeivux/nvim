@@ -15,7 +15,7 @@ return {
   ["williamboman/mason.nvim"] = { override_options = overrides.mason },
 
   ["ggandor/leap.nvim"] = {
-    config = function ()
+    config = function()
       local ok, leap = pcall(require, "leap")
 
       if ok then
@@ -44,11 +44,19 @@ return {
     after = "nvim-lspconfig",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
-    end
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
   },
-
-
+  ["mfussenegger/nvim-dap"] = {
+    config = function ()
+      require "custom.plugins.dap"
+    end,
+  },
+  ["rcarriga/nvim-dap-ui"] = {
+    config = function()
+      require("dapui").setup()
+    end,
+  }
 }
