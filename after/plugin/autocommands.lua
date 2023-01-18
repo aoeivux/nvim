@@ -11,5 +11,3 @@ vim.cmd [[
 vim.g.omni_sql_no_default_maps = 1
 -- or below
 -- vim.g.ftplugin_sql_omni_key = '<Plug>DisableSqlOmni'
-
-

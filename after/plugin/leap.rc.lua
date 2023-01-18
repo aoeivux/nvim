@@ -9,6 +9,6 @@ require('leap').add_default_mappings()
 -- require('leap').opts.safe_labels = {}
 
 require('leap').opts.highlight_unlabeled_phase_one_targets = true
-vim.keymap.set({'x', 'o', 'n'}, 'r', '<Plug>(leap-forward-to)')
+vim.keymap.set({ 'x', 'o', 'n' }, 'r', '<Plug>(leap-forward-to)')
 
-vim.keymap.set({'x', 'o', 'n'}, 'R', '<Plug>(leap-backward-to)')
+vim.keymap.set({ 'x', 'o', 'n' }, 'R', '<Plug>(leap-backward-to)')

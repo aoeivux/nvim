@@ -14,72 +14,69 @@ if fn.empty(fn.glob(install_path)) > 0 then
   print "Installing packer close and reopen Neovim..."
   vim.cmd [[packadd packer.nvim]]
 end
-
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then return end
 
 return packer.startup(function(use)
-  use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "kyazdani42/nvim-web-devicons" -- icons
+	use "wbthomason/packer.nvim" -- Have packer manage itself
+	use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+	use "kyazdani42/nvim-web-devicons" -- icons
 
-  -- Telescope
-  use "nvim-telescope/telescope.nvim"
-  use "norcalli/nvim-colorizer.lua"
-  -- neovim lsp
-  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
-  use 'glepnir/lspsaga.nvim'
-  use 'onsails/lspkind.nvim'
+	-- Telescope
+	use "nvim-telescope/telescope.nvim"
+	use "norcalli/nvim-colorizer.lua"
+	-- neovim lsp
+	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+	use 'williamboman/mason.nvim'
+	use 'williamboman/mason-lspconfig.nvim'
+	use 'glepnir/lspsaga.nvim'
+	use 'onsails/lspkind.nvim'
 
+	-- Editor enhance
+	use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+	use "terrortylor/nvim-comment"
 
-  -- Editor enhance
-  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "terrortylor/nvim-comment"
+	-- cmp plugins
+	use "hrsh7th/nvim-cmp"
+	use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
+	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+	use 'L3MON4D3/LuaSnip' -- Snippets pluginc
+	use "hrsh7th/cmp-buffer" -- buffer completions
+	use "hrsh7th/cmp-path" -- path completions
+	use "hrsh7th/cmp-cmdline" -- cmdline completions
+	use 'f3fora/cmp-spell'
+	use 'rafamadriz/friendly-snippets' -- Snippets collection for a set of different programming languages for faster development.
 
-  -- cmp plugins
-  use "hrsh7th/nvim-cmp"
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-  use 'L3MON4D3/LuaSnip' -- Snippets pluginc
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use 'f3fora/cmp-spell'
-  use 'rafamadriz/friendly-snippets' -- Snippets collection for a set of different programming languages for faster development.
-  
-  use "tpope/vim-surround" -- vim surround
+	use "tpope/vim-surround" -- vim surround
 
-  use "ethanholz/nvim-lastplace" -- auto return back to the last modified positon when open a file
+	use "ethanholz/nvim-lastplace" -- auto return back to the last modified positon when open a file
 
-  use "folke/which-key.nvim" -- which  key
+	use "folke/which-key.nvim" -- which  key
 
-  use "kyazdani42/nvim-tree.lua"
+	use "kyazdani42/nvim-tree.lua"
 
-  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
-  use "nvim-lualine/lualine.nvim" -- status line
-  use 'lukas-reineke/indent-blankline.nvim'
-  -- use 'sheerun/vim-polyglot' -- 解决了在html嵌入javascript代码缩进错误的问题
-  --
-  use 'mhinz/vim-startify' --start up ui
-  use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' } --code runner
-  use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
-  }
-  use 'sainnhe/gruvbox-material'
-  
-  use 'mfussenegger/nvim-jdtls' -- java lsp 
+	use { 'akinsho/bufferline.nvim', tag = "v2.*" }
+	use "nvim-lualine/lualine.nvim" -- status line
+	use 'lukas-reineke/indent-blankline.nvim'
+	use 'goolord/alpha-nvim' --start up ui
+	use 'CRAG666/code_runner.nvim' --code runner
+	use 'nvim-treesitter/nvim-treesitter'
+	use 'sainnhe/gruvbox-material'
 
-  use 'mg979/vim-visual-multi'
+	use 'mfussenegger/nvim-jdtls' -- java lsp
 
-  use 'ggandor/leap.nvim'
+	use 'mg979/vim-visual-multi'
 
-  use "nvim-telescope/telescope-live-grep-args.nvim"
+	use 'ggandor/leap.nvim'
 
-  
+	use 'mfussenegger/nvim-dap'
 
+	use "rcarriga/nvim-dap-ui"
+
+	use "jose-elias-alvarez/null-ls.nvim"
+
+	use "NvChad/nvterm"
+	use 'lewis6991/impatient.nvim'
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end

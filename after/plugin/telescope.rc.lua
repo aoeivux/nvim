@@ -1,136 +1,127 @@
-local present, telescope_setup = pcall(require, "telescope")
-if not present then
-  return
-end
+local present, telescope = pcall(require, "telescope")
 local actions = require("telescope.actions")
-local previewers = require("telescope.previewers")
 
-local Job = require("plenary.job")
-local new_maker = function(filepath, bufnr, opts)
-  filepath = vim.fn.expand(filepath)
-  Job
-      :new({
-        command = "file",
-        args = { "--mime-type", "-b", filepath },
-        on_exit = function(j)
-          local mime_type = vim.split(j:result()[1], "/")[1]
-          if mime_type == "text" then
-            previewers.buffer_previewer_maker(filepath, bufnr, opts)
-          else
-            -- maybe we want to write something to the buffer here
-            vim.schedule(function()
-              vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "BINARY" })
-            end)
-          end
-        end,
-      })
-      :sync()
+if not present then
+	return
 end
 
-local os = require("swaylivrx.utils").os
-local buffer_previewer_maker
-local finder
-if os == "Linux" or os == "Darwin" then
-  -- Find the name of the fd binary file in the operating system.
-  if vim.fn.filereadable("/bin/fdfind") == 1 or vim.fn.filereadable("/usr/bin/fdfind") == 1 then
-    finder = "fdfind"
-  else
-    finder = "fd"
-  end
-  buffer_previewer_maker = new_maker
-else
-  finder = "fd"
-  buffer_previewer_maker = nil
-end
+vim.g.theme_switcher_loaded = true
 
-local telescope_config = {
-  defaults = {
-    mappings = {
-      i = {
-        ["<C-n>"] = actions.cycle_history_next,
-        ["<C-p>"] = actions.cycle_history_prev,
+local options = {
+	defaults = {
+		vimgrep_arguments = {
+			"rg",
+			"-L",
+			"--color=never",
+			"--no-heading",
+			"--with-filename",
+			"--line-number",
+			"--column",
+			"--smart-case",
+		},
+		prompt_prefix = "   ",
+		selection_caret = "  ",
+		entry_prefix = "  ",
+		initial_mode = "insert",
+		selection_strategy = "reset",
+		sorting_strategy = "ascending",
+		layout_strategy = "horizontal",
+		layout_config = {
+			horizontal = {
+				prompt_position = "top",
+				preview_width = 0.55,
+				results_width = 0.8,
+			},
+			vertical = {
+				mirror = false,
+			},
+			width = 0.87,
+			height = 0.80,
+			preview_cutoff = 120,
+		},
+		file_sorter = require("telescope.sorters").get_fuzzy_file,
+		file_ignore_patterns = { "node_modules" },
+		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+		path_display = { "truncate" },
+		winblend = 0,
+		border = {},
+		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+		color_devicons = true,
+		set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
+		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+		qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+		-- Developer configurations: Not meant for general override
+		buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+		mappings = {
+			i = {
+				["<C-n>"] = actions.cycle_history_next,
+				["<C-p>"] = actions.cycle_history_prev,
 
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
+				["<C-j>"] = actions.move_selection_next,
+				["<C-k>"] = actions.move_selection_previous,
 
-        ["<C-c>"] = actions.close,
+				["<C-c>"] = actions.close,
 
-        ["<Down>"] = actions.move_selection_next,
-        ["<Up>"] = actions.move_selection_previous,
+				["<Down>"] = actions.move_selection_next,
+				["<Up>"] = actions.move_selection_previous,
 
-        ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
-        ["<C-v>"] = actions.select_vertical,
-        ["<C-t>"] = actions.select_tab,
+				["<CR>"] = actions.select_default,
+				["<C-h>"] = actions.select_horizontal,
+				["<C-v>"] = actions.select_vertical,
+				["<C-t>"] = actions.select_tab,
 
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
+				["<C-u>"] = actions.preview_scrolling_up,
+				["<C-d>"] = actions.preview_scrolling_down,
 
-        ["<PageUp>"] = actions.results_scrolling_up,
-        ["<PageDown>"] = actions.results_scrolling_down,
+				["<PageUp>"] = actions.results_scrolling_up,
+				["<PageDown>"] = actions.results_scrolling_down,
 
-        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-        ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-        ["<C-l>"] = actions.complete_tag,
-        ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
-      },
+				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+				["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+			},
 
-      n = {
-        ["<esc>"] = actions.close,
-        ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
-        ["<C-v>"] = actions.select_vertical,
-        ["<C-t>"] = actions.select_tab,
+			n = {
+				["<esc>"] = actions.close,
+				["<CR>"] = actions.select_default,
+				["<C-h>"] = actions.select_horizontal,
+				["<C-v>"] = actions.select_vertical,
+				["<C-t>"] = actions.select_tab,
 
-        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-        ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+				["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
 
-        ["j"] = actions.move_selection_next,
-        ["k"] = actions.move_selection_previous,
-        ["H"] = actions.move_to_top,
-        ["M"] = actions.move_to_middle,
-        ["L"] = actions.move_to_bottom,
+				["j"] = actions.move_selection_next,
+				["k"] = actions.move_selection_previous,
+				["H"] = actions.move_to_top,
+				["M"] = actions.move_to_middle,
+				["L"] = actions.move_to_bottom,
 
-        ["<Down>"] = actions.move_selection_next,
-        ["<Up>"] = actions.move_selection_previous,
-        ["gg"] = actions.move_to_top,
-        ["G"] = actions.move_to_bottom,
+				["<Down>"] = actions.move_selection_next,
+				["<Up>"] = actions.move_selection_previous,
+				["gg"] = actions.move_to_top,
+				["G"] = actions.move_to_bottom,
 
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
+				["<C-u>"] = actions.preview_scrolling_up,
+				["<C-d>"] = actions.preview_scrolling_down,
 
-        ["<PageUp>"] = actions.results_scrolling_up,
-        ["<PageDown>"] = actions.results_scrolling_down,
+				["<PageUp>"] = actions.results_scrolling_up,
+				["<PageDown>"] = actions.results_scrolling_down,
 
-        ["?"] = actions.which_key,
-      },
-    },
-    buffer_previewer_maker = buffer_previewer_maker,
-    vimgrep_arguments = {
-      "rg",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-      "--hidden",
-      "--glob=!.git/",
-    },
-    prompt_prefix = "   ",
-    selection_caret = " ",
-  },
-  pickers = {
-    find_files = {
-      find_command = { finder, "--type=file", "--follow", "--exclude=.git" },
-    },
-  },
+				["?"] = actions.which_key,
+			},
+		},
+	},
 
+	extensions_list = { "themes", "terms" },
 }
 
-require("telescope").load_extension("live_grep_args")
-telescope_setup.setup(telescope_config)
+-- check for any override
+telescope.setup(options)
+
+-- load extensions
+pcall(function()
+	for _, ext in ipairs(options.extensions_list) do
+		telescope.load_extension(ext)
+	end
+end)

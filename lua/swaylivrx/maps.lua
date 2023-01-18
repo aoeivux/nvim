@@ -2,10 +2,10 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
---Remap space as leader key
-keymap("", ";", "<Nop>", opts)
-vim.g.mapleader = ";"
-vim.g.maplocalleader = ";"
+local bufopts = { noremap=true, silent=true, buffer=bufnr }
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 
 -- Normal --
@@ -23,44 +23,24 @@ keymap("n", "K", "5k", opts)
 keymap("v", "J", "5j", opts)
 keymap("v", "K", "5k", opts)
 
---macos open this file in browser
--- keymap("n", "<F5>", ":!open -a Microsoft\\ Edge %<CR><CR>", opts)
--- keymap("n", "<F5>", ":!open -a Safari %<CR><CR>", opts)
-keymap("n", "<F5>", ":!open -a min %<CR><CR>", opts)
-
--- open current url in default browser
-vim.cmd [[
-function! HandleURI()
-  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
-  echo s:uri
-  if s:uri != ""
-	  exec "!open \"" . s:uri . "\""
-  else
-	  echo "No URI found in line."
-  endif
-endfunction
-map <F7> :call HandleURI()<CR>
-]]
-
 
 -- quickly save && quit
 keymap("n", "Q", ":q<CR>", opts)
-keymap("n", "S", ":w<CR>", opts)
+keymap("n", "<C-s>", ":w<CR>", opts)
 
--- FileExpoler
 
 -- no highlight
-keymap("n", "<leader>l", ":nohl<cr>", opts)
+keymap("n", ";l", ":nohl<cr>", opts)
 -- save buffer
-keymap("n", "<leader>w", ":w<cr>", opts)
+keymap("n", ";w", ":w<cr>", opts)
 -- delete cur buffer
-keymap("n", "<leader>d", ":bdelete<cr>", opts)
+keymap("n", ";d", ":bdelete<cr>", opts)
 
 
 
 -- Navigate buffers
-keymap("n", "tn", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "tp", ":BufferLineCyclePrev<CR>", opts)
+keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts)
 
 -- Navigate line
 keymap("n", "H", "^", opts)
@@ -76,62 +56,61 @@ keymap("v", ">", ">gv", opts)
 
 
 
--- replace words
-vim.cmd(
-  [[
-" line
-  nnoremap <leader>s :s/\<<C-r><C-w>\>//g<left><left>
-" global
-  nnoremap <leader>S :%s/\<<C-r><C-w>\>//g<left><left>
-  
-  vnoremap <leader>s :s/\<<C-r><C-w>\>//g<left><left>
-" global
-  vnoremap <leader>S :%s/\<<C-r><C-w>\>//g<left><left>
-]])
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+
 
 
 -- latest maps
-local keymap = vim.keymap
+local keymap = vim.keymap.set
+
+-- lsp saga
+keymap("n", "gd", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
+keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+keymap("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
+keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+keymap("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
+keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
+keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
+-- Callhierarchy
+keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
+keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
+-- Float terminal
+keymap({"n", "t"}, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
+keymap("n", "gh", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+-- Only Error
+keymap("n", "[E", function()
+  require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+end, { silent = true })
+keymap("n", "]E", function()
+  require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+end, { silent = true })
 
 
---rename buffer
--- file + yourname
+
 
 -- don's paste detele words
-keymap.set('n', 'x', '"_x')
-keymap.set('v', 'x', '"_x')
-keymap.set('n', 'c', '"_c')
-keymap.set('v', 'c', '"_c')
--- Increment/decrement
-keymap.set('n', '+', '<C-a>')
-keymap.set('n', '-', '<C-x>')
--- Select all
-keymap.set('n', '<C-a>', 'gg<S-v>G')
+keymap('n', 'x', '"_x')
+keymap('v', 'x', '"_x')
+keymap('n', 'c', '"_c')
+keymap('v', 'c', '"_c')
+-- Incnt/decrement
+keymap('n', '+', '<C-a>')
+keymap('n', '-', '<C-x>')
 
--- Delete a word backwards
-keymap.set('n', 'dw', 'vb"_d')
+-- Reswindow
+keymap('n', '<A-left>', '<C-w>3<')
+keymap('n', '<A-right>', '<C-w>3>')
+keymap('n', '<A-up>', '<C-w>3+')
+keymap('n', '<A-down>', '<C-w>3-')
 
--- Split window
--- keymap.set('n', 'ss', ':split<Return><C-w>w')
--- keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
--- instead of :vsp sp
--- Resize window
-keymap.set('n', '<A-left>', '<C-w>3<')
-keymap.set('n', '<A-right>', '<C-w>3>')
-keymap.set('n', '<A-up>', '<C-w>3+')
-keymap.set('n', '<A-down>', '<C-w>3-')
-
-
-
-
--- Leap.nvim Mappings
-keymap.set('n', 'f', '<Plug>(leap-forward-to)', {noremap = true, silent=true})
-keymap.set('x', 'f', '<Plug>(leap-forward-to)', {noremap = true, silent=true})
-keymap.set('o', 'f', '<Plug>(leap-forward-to)', {noremap = true, silent=true})
-keymap.set('n', 'F', '<Plug>(leap-backward-to)', {noremap = true, silent=true})
-keymap.set('x', 'F', '<Plug>(leap-backward-to)', {noremap = true, silent=true})
-keymap.set('o', 'F', '<Plug>(leap-backward-to)', {noremap = true, silent=true})
-keymap.set('n', 'gs', '<Plug>(leap-cross-window)', {noremap = true, silent=true})
-keymap.set('x', 'gs', '<Plug>(leap-cross-window)', {noremap = true, silent=true})
-keymap.set('o', 'gs', '<Plug>(leap-cross-window)', {noremap = true, silent=true})
-keymap.set('o', 'gs', '<Plug>(leap-repeat)', {noremap = true, silent=true})
+keymap("n", '<Bslash>','<cmd> TbufPick <CR>')
+keymap("n", '<leader>x','<cmd> bdelelte <CR>')
+keymap("n", '<M-1>', '<cmd> NvimTreeFocus <CR>')
+keymap('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+keymap('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+keymap('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+keymap('n', '<space>wl', function()print(vim.inspect(vim.lsp.buf.list_workspace_folders()))end, bufopts)

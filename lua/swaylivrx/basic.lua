@@ -1,77 +1,95 @@
-local options = {
+local opt = vim.opt
+local g = vim.g
 
-	-- coc nedded
-	backup = false, -- creates a backup file
-	clipboard = "unnamedplus", -- allows neovim to access the system clipboard
-	cmdheight = 1, -- keep status bar position close to bottom
-	hidden = true,
-	conceallevel = 0, -- so that `` is visible in markdown files
-	fileencoding = "utf-8", -- the encoding written to a file
-	hlsearch = true, -- highlight all matches on previous search pattern
-	ignorecase = true, -- ignore case in search patterns
-	mouse = "a", -- allow the mouse to be used in neovim
-	pumheight = 10, -- pop up menu height
-	showmode = false, -- we don't need to see things like -- INSERT -- anymore
-	showtabline = 2, -- always show tabs
-	smartcase = true, -- smart case
-	smartindent = true, -- make indenting smarter again
-	splitbelow = true, -- force all horizontal splits to go below current window
-	splitright = true, -- force all vertical splits to go to the right of current window
-	swapfile = false, -- creates a swapfile
-	termguicolors = true, -- set term gui colors (most terminals support this)
-	timeoutlen = 500, -- time to wait for a mapped sequence to complete (in milliseconds)
-	undofile = true, -- enable persistent undo
-	updatetime = 300, -- faster completion (4000ms default)
-	writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-  smarttab = true,
-	expandtab = true, -- convert tabs to spaces
-	cursorline = true, -- highlight the current line
-	cursorcolumn = false, -- cursor column.
-	number = true, -- set numbered lines
-	relativenumber = true, -- set relative numbered lines
-	numberwidth = 4, -- set number column width to 2 {default 4}
-	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
-	wrap = false, -- display lines as one long line
-	scrolloff = 8, -- keep 8 height offset from above and bottom
-	sidescrolloff = 8, -- keep 8 width offset from left and right
-	guifont = "FiraCode Nerd Font:h14", -- the font used in graphical neovim applications
-	foldmethod = "expr", -- fold with nvim_treesitter
-	foldexpr = "nvim_treesitter#foldexpr()",
-	foldenable = false, -- no fold to be applied when open a file
-	foldlevel = 99, -- if not set this, fold will be everywhere
-	spell = false, -- add spell support
-	spelllang = { 'en_us' }, -- support which languages?
-	diffopt = "vertical,filler,internal,context:4", -- vertical diff split view
-  tabstop=2,
-  shiftwidth=2,
-  softtabstop=2,
-  autoindent=true,
+g.toggle_theme_icon = "   "
+g.theme_switcher_loaded = false
+
+opt.backup = false
+opt.scrolloff = 8
+opt.laststatus = 3 -- global statusline
+opt.showmode = false
+opt.wrap = false
+
+opt.clipboard = "unnamedplus"
+opt.cursorline = true
+
+-- Indenting
+opt.expandtab = true
+opt.shiftwidth = 2
+opt.autoindent = true
+opt.smartindent = true
+opt.tabstop = 2
+opt.softtabstop = 2
+
+opt.fillchars = { eob = " " }
+opt.ignorecase = true
+opt.smartcase = true
+opt.mouse = "a"
+-- Numbers
+opt.number = true
+opt.numberwidth = 2
+opt.ruler = false
+
+-- disable nvim intro
+opt.shortmess:append "sI"
+
+opt.signcolumn = "yes"
+opt.splitbelow = true
+opt.splitright = true
+opt.termguicolors = true
+opt.timeoutlen = 1000
+opt.undofile = true
+
+-- interval for writing swap file to disk, also used by gitsigns
+opt.updatetime = 250
+opt.swapfile = false
+-- go to previous/next line with h,l,left arrow and right arrow
+-- when cursor reaches end/beginning of line
+opt.whichwrap:append "<>[]hl"
+
+g.mapleader = " "
+
+-- disable some builtin vim plugins
+local default_plugins = {
+	"2html_plugin",
+	"getscript",
+	"getscriptPlugin",
+	"gzip",
+	"logipat",
+	"netrw",
+	"netrwPlugin",
+	"netrwSettings",
+	"netrwFileHandlers",
+	"matchit",
+	"tar",
+	"tarPlugin",
+	"rrhelper",
+	"spellfile_plugin",
+	"vimball",
+	"vimballPlugin",
+	"zip",
+	"zipPlugin",
+	"tutor",
+	"rplugin",
+	"syntax",
+	"synmenu",
+	"optwin",
+	"compiler",
+	"bugreport",
+	"ftplugin",
 }
 
-vim.opt.shortmess:append "c"
-vim.opt.cursorline = true
-vim.opt.termguicolors = true
-vim.opt.winblend = 0
-vim.opt.wildoptions = 'pum'
-vim.opt.pumblend = 5
-vim.opt.background = 'dark'
-
-for k, v in pairs(options) do
-	vim.opt[k] = v
+for _, plugin in pairs(default_plugins) do
+	g["loaded_" .. plugin] = 1
 end
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
-vim.cmd [[highlight MyGroup cterm=bold]]
+local default_providers = {
+	"node",
+	"perl",
+	"python3",
+	"ruby",
+}
 
-vim.cmd [[
-let s:clip = '/mnt/c/Windows/System32/clip.exe' 
-if executable(s:clip)
-    augroup WSLYank
-        autocmd!
-        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-    augroup END
-endif
-]]
-
-
+for _, provider in ipairs(default_providers) do
+	vim.g["loaded_" .. provider .. "_provider"] = 0
+end

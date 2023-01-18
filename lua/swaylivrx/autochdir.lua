@@ -1,6 +1,6 @@
 -- auto change dir
-vim.api.nvim_command('set autochdir')
+vim.api.nvim_command('set noautochdir')
 
 vim.cmd [[
-autocmd VimEnter * set autochdir
+autocmd VimEnter * set noautochdir
 ]]

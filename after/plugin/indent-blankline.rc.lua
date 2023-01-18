@@ -16,17 +16,17 @@ vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
 
 
 local blankline_config = {
-  space_char_blankline = " ",
-  show_current_context = true,
-  show_current_context_start = true,
-  char_highlight_list = {
-    "IndentBlanklineIndent1",
-    "IndentBlanklineIndent2",
-    "IndentBlanklineIndent3",
-    "IndentBlanklineIndent4",
-    "IndentBlanklineIndent5",
-    "IndentBlanklineIndent6",
-  },
+	space_char_blankline = " ",
+	show_current_context = true,
+	show_current_context_start = true,
+	char_highlight_list = {
+		"IndentBlanklineIndent1",
+		"IndentBlanklineIndent2",
+		"IndentBlanklineIndent3",
+		"IndentBlanklineIndent4",
+		"IndentBlanklineIndent5",
+		"IndentBlanklineIndent6",
+	},
 }
 
 blankline.setup(blankline_config)
