@@ -19,12 +19,8 @@ local options = {
   hijack_unnamed_buffer_when_opening = false,
   update_cwd = true,
   update_focused_file = {
-    enable = false,
-    update_cwd = false,
-  },
-  hijack_directories = {
     enable = true,
-    auto_open = true,
+    update_cwd = false,
   },
   view = {
     adaptive_size = true,

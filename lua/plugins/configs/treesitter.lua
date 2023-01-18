@@ -10,7 +10,8 @@ local options = {
   ensure_installed = {
     "lua",
   },
-
+  sync_install = false,
+  auto_install = false,
   highlight = {
     enable = true,
     use_languagetree = true,
