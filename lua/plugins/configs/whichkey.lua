@@ -4,11 +4,9 @@ if not present then
   return
 end
 
-require("base46").load_highlight "whichkey"
+loadfile(vim.g.base46_cache .. "whichkey")()
 
 local options = {
-  marks = false, -- shows a list of your marks on ' and `
-  registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
 
   icons = {
     breadcrumb = "»", -- symbol used in the command line area that shows your active key combo

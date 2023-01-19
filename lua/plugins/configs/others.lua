@@ -30,15 +30,14 @@ M.blankline = function()
     return
   end
 
-  require("base46").load_highlight "blankline"
+  loadfile(vim.g.base46_cache .. "blankline")()
 
   local options = {
     indentLine_enabled = 1,
     filetype_exclude = {
       "help",
       "terminal",
-      "alpha",
-      "packer",
+      "lazy",
       "lspinfo",
       "TelescopePrompt",
       "TelescopeResults",
@@ -77,6 +76,7 @@ M.colorizer = function()
       css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
       css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
       mode = "background", -- Set the display mode.
+      tailwind = true, -- Enable tailwind colors
     },
   }
 
@@ -136,7 +136,7 @@ M.gitsigns = function()
     return
   end
 
-  require("base46").load_highlight "git"
+  loadfile(vim.g.base46_cache .. "git")()
 
   local options = {
     signs = {
@@ -145,10 +145,11 @@ M.gitsigns = function()
       delete = { hl = "DiffDelete", text = "", numhl = "GitSignsDeleteNr" },
       topdelete = { hl = "DiffDelete", text = "‾", numhl = "GitSignsDeleteNr" },
       changedelete = { hl = "DiffChangeDelete", text = "~", numhl = "GitSignsChangeNr" },
+      untracked = { hl = "GitSignsAdd", text = "│", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
     },
-    on_attach = function (bufnr)
+    on_attach = function(bufnr)
       utils.load_mappings("gitsigns", { buffer = bufnr })
-    end
+    end,
   }
 
   options = load_override(options, "lewis6991/gitsigns.nvim")
@@ -159,31 +160,13 @@ M.devicons = function()
   local present, devicons = pcall(require, "nvim-web-devicons")
 
   if present then
-    require("base46").load_highlight "devicons"
+    loadfile(vim.g.base46_cache .. "devicons")()
 
     local options = { override = require("nvchad_ui.icons").devicons }
-    options = require("core.utils").load_override(options, "kyazdani42/nvim-web-devicons")
+    options = require("core.utils").load_override(options, "nvim-tree/nvim-web-devicons")
 
     devicons.setup(options)
   end
-end
-
-M.packer_init = function()
-  return {
-    auto_clean = true,
-    compile_on_sync = true,
-    git = { clone_timeout = 6000 },
-    display = {
-      working_sym = "ﲊ",
-      error_sym = "✗ ",
-      done_sym = " ",
-      removed_sym = " ",
-      moved_sym = "",
-      open_fn = function()
-        return require("packer.util").float { border = "single" }
-      end,
-    },
-  }
 end
 
 return M

@@ -4,14 +4,14 @@ if not present then
   return
 end
 
-require("base46").load_highlight "treesitter"
+loadfile(vim.g.base46_cache .. "syntax")()
+loadfile(vim.g.base46_cache .. "treesitter")()
 
 local options = {
   ensure_installed = {
     "lua",
   },
-  sync_install = false,
-  auto_install = false,
+
   highlight = {
     enable = true,
     use_languagetree = true,

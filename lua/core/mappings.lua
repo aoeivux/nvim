@@ -11,20 +11,22 @@ M.general = {
     -- go to  beginning and end
     ["<C-b>"] = { "<ESC>^i", "beginning of line" },
     ["<C-e>"] = { "<End>", "end of line" },
+
+    -- navigate within insert mode
+    ["<C-h>"] = { "<Left>", "move left" },
+    ["<C-l>"] = { "<Right>", "move right" },
+    ["<C-j>"] = { "<Down>", "move down" },
+    ["<C-k>"] = { "<Up>", "move up" },
   },
 
   n = {
     ["<ESC>"] = { "<cmd> noh <CR>", "no highlight" },
+
     -- switch between windows
     ["<C-h>"] = { "<C-w>h", "window left" },
     ["<C-l>"] = { "<C-w>l", "window right" },
     ["<C-j>"] = { "<C-w>j", "window down" },
     ["<C-k>"] = { "<C-w>k", "window up" },
-
-    ["H"] = { "^", "head of line" },
-    ["L"] = { "$", "tail of line" },
-    ["J"] = { "6j", "quick move 6 line down" },
-    ["K"] = { "6k", "quick move 6 line up" },
 
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "save file" },
@@ -62,21 +64,16 @@ M.general = {
   t = { ["<C-x>"] = { termcodes "<C-\\><C-N>", "escape terminal mode" } },
 
   v = {
-    ["J"] = { "6j", "quick move 6 line down" },
-    ["K"] = { "6k", "quick move 6 line up" },
-    ["H"] = { "^", "head of line" },
-    ["L"] = { "$", "tail of line" },
-     
-    ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
-    ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
+    ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "move up", opts = { expr = true } },
+    ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "move down", opts = { expr = true } },
   },
 
   x = {
-    ["j"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
-    ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
+    ["j"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "move left", opts = { expr = true } },
+    ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "move down", opts = { expr = true } },
     -- Don't copy the replaced text after pasting in visual mode
     -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
-    ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', opts = { silent = true } },
+    ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', "dont copy replaced text", opts = { silent = true } },
   },
 }
 
@@ -153,7 +150,7 @@ M.lspconfig = {
       "lsp definition",
     },
 
-    ["gh"] = {
+    ["K"] = {
       function()
         vim.lsp.buf.hover()
       end,
@@ -181,7 +178,7 @@ M.lspconfig = {
       "lsp definition type",
     },
 
-    ["<leader>rn"] = {
+    ["<leader>ra"] = {
       function()
         require("nvchad_ui.renamer").open()
       end,
@@ -209,14 +206,14 @@ M.lspconfig = {
       "floating diagnostic",
     },
 
-    ["[e"] = {
+    ["[d"] = {
       function()
         vim.diagnostic.goto_prev()
       end,
       "goto prev",
     },
 
-    ["]e"] = {
+    ["]d"] = {
       function()
         vim.diagnostic.goto_next()
       end,
@@ -265,7 +262,10 @@ M.nvimtree = {
 
   n = {
     -- toggle
-    ["<M-1>"] = { "<cmd> NvimTreeFocus <CR>", "toggle nvimtree" },
+    ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
+
+    -- focus
+    ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "focus nvimtree" },
   },
 }
 
@@ -279,7 +279,7 @@ M.telescope = {
     ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "help page" },
-    ["<leader>fr"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
+    ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
     ["<leader>tk"] = { "<cmd> Telescope keymaps <CR>", "show keys" },
 
     -- git
