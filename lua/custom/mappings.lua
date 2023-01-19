@@ -10,7 +10,10 @@ M.disabled = {
 		["<C-l>"] = "",
 		["<C-j>"] = "",
 		["<C-k>"] = "",
-	}
+	},
+  v = {
+    ["q:"] = "",
+  }
 }
 
 M.general = {
@@ -24,6 +27,7 @@ M.general = {
 		["<M-1>"] = { "<cmd> NvimTreeFocus <CR>", "toggle nvimtree" },
 	},
 	v = {
+    ["q:"] = {"<Nop>", "Forbid command line mode"},
 		-- Stay in indent mode
 		[">"] = { ">gv", "stay in indent" },
 		["<"] = { "<gv", "stay in indent" },
