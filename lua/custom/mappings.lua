@@ -3,6 +3,7 @@ local M = {}
 M.disabled = {
 	n = {
 		["<leader>h"] = "",
+    ["q:"] = "",
 	},
 	i = {
 		["<C-h>"] = "",
@@ -14,6 +15,7 @@ M.disabled = {
 
 M.general = {
 	n = {
+    ["q:"] = {"<Nop>", "Forbid command line mode"},
 		["Q"] = { "<cmd> q! <CR>", "quit current file" },
 		["H"] = { "^", "head of line" },
 		["L"] = { "$", "tail of line" },
@@ -220,5 +222,24 @@ M.lspconfig = {
 	},
 }
 
+M.comment = {
+  plugin = true,
 
+  -- toggle comment in both modes
+  n = {
+    ["gc"] = {
+      function()
+        require("Comment.api").toggle.linewise.current()
+      end,
+      "toggle comment",
+    },
+  },
+
+  v = {
+    ["gc"] = {
+      "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+      "toggle comment",
+    },
+  },
+}
 return M
