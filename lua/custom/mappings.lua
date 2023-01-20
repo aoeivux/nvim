@@ -25,6 +25,7 @@ M.general = {
 		["J"] = { "6j", "quick move 6 line down" },
 		["K"] = { "6k", "quick move 6 line up" },
 		["<M-1>"] = { "<cmd> NvimTreeFocus <CR>", "toggle nvimtree" },
+    ["S"] = { "<cmd> w! <CR>", "Save current file" },
 	},
 	v = {
     ["q:"] = {"<Nop>", "Forbid command line mode"},

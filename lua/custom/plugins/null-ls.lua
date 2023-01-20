@@ -20,6 +20,8 @@ local sources = {
 
   -- xml
   b.formatting.xmlformat,
+
+  b.formatting.google_java_format,
 }
 
 null_ls.setup {

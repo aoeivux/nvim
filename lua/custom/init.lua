@@ -37,5 +37,5 @@ autocmd Filetype cpp setlocal ts=4 sw=4 expandtab
 autocmd Filetype c setlocal ts=4 sw=4 expandtab
 autocmd Filetype go setlocal ts=4 sw=4 expandtab
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 expandtab
-autocmd Filetype java setlocal ts=4 sw=4 sts=0 expandtab
+autocmd Filetype java setlocal ts=2 sw=2 sts=0 expandtab
 ]]
