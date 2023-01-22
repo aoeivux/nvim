@@ -1,4 +1,6 @@
 local dap = require "dap"
+
+-- Adapters
 dap.adapters.delve = {
   type = "server",
   port = "${port}",
@@ -8,7 +10,9 @@ dap.adapters.delve = {
   },
 }
 
--- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
+
+-- Configurations
+--
 dap.configurations.go = {
   {
     type = "delve",
@@ -23,7 +27,6 @@ dap.configurations.go = {
     mode = "test",
     program = "${file}",
   },
-  -- works with go.mod packages and sub packages
   {
     type = "delve",
     name = "Debug test (go.mod)",
@@ -33,7 +36,6 @@ dap.configurations.go = {
   },
 }
 
--- custom dap color with visual studio
 local dap_breakpoint_color = {
     breakpoint = {
         ctermbg=0,
