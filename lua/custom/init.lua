@@ -44,5 +44,5 @@ autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype java setlocal ts=2 sw=2 sts=0 expandtab
 ]]
 
--- disabled LuaSnip expand_or_jump() or expand_or_jump(-1) with Tab and S-Tab key 
+-- disabled LuaSnip expand_or_jump() or expand_or_jump(-1) with Tab and S-Tab key
 vim.cmd[[ autocmd InsertLeave * lua if require("luasnip").session.current_nodes[vim.api.nvim_get_current_buf()] then require("luasnip").unlink_current() end ]]
