@@ -17,6 +17,10 @@ autocmd(
 vim.api.nvim_command('set noacd')
 vim.cmd [[ autocmd VimEnter * set noacd ]]
 
+
+-- gerneral
+opt.scrolloff = 8
+
 -- close backup
 opt.backup = false
 opt.wb = false
