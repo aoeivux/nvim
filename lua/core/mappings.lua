@@ -1,9 +1,5 @@
 -- n, v, i, t = mode names
 
-local function termcodes(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
 local M = {}
 
 M.general = {
@@ -11,20 +7,21 @@ M.general = {
     -- go to  beginning and end
     ["<C-b>"] = { "<ESC>^i", "beginning of line" },
     ["<C-e>"] = { "<End>", "end of line" },
+
+    -- navigate within insert mode
+    ["<C-h>"] = { "<Left>", "move left" },
+    ["<C-l>"] = { "<Right>", "move right" },
+    ["<C-j>"] = { "<Down>", "move down" },
+    ["<C-k>"] = { "<Up>", "move up" },
   },
 
   n = {
-    ["<ESC>"] = { "<cmd> noh <CR>", "no highlight" },
+    ["<Esc>"] = { ":noh <CR>", "clear highlights" },
     -- switch between windows
     ["<C-h>"] = { "<C-w>h", "window left" },
     ["<C-l>"] = { "<C-w>l", "window right" },
     ["<C-j>"] = { "<C-w>j", "window down" },
     ["<C-k>"] = { "<C-w>k", "window up" },
-
-    ["H"] = { "^", "head of line" },
-    ["L"] = { "$", "tail of line" },
-    ["J"] = { "6j", "quick move 6 line down" },
-    ["K"] = { "6k", "quick move 6 line up" },
 
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "save file" },
@@ -35,16 +32,6 @@ M.general = {
     -- line numbers
     ["<leader>n"] = { "<cmd> set nu! <CR>", "toggle line number" },
     ["<leader>rn"] = { "<cmd> set rnu! <CR>", "toggle relative number" },
-
-    -- update nvchad
-    ["<leader>uu"] = { "<cmd> :NvChadUpdate <CR>", "update nvchad" },
-
-    ["<leader>tt"] = {
-      function()
-        require("base46").toggle_theme()
-      end,
-      "toggle theme",
-    },
 
     -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
@@ -57,26 +44,24 @@ M.general = {
 
     -- new buffer
     ["<leader>b"] = { "<cmd> enew <CR>", "new buffer" },
+    ["<leader>ch"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
   },
 
-  t = { ["<C-x>"] = { termcodes "<C-\\><C-N>", "escape terminal mode" } },
+  t = {
+    ["<C-x>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "escape terminal mode" },
+  },
 
   v = {
-    ["J"] = { "6j", "quick move 6 line down" },
-    ["K"] = { "6k", "quick move 6 line up" },
-    ["H"] = { "^", "head of line" },
-    ["L"] = { "$", "tail of line" },
-     
-    ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
-    ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
+    ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "move up", opts = { expr = true } },
+    ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "move down", opts = { expr = true } },
   },
 
   x = {
-    ["j"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
-    ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
+    ["j"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "move left", opts = { expr = true } },
+    ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "move down", opts = { expr = true } },
     -- Don't copy the replaced text after pasting in visual mode
     -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
-    ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', opts = { silent = true } },
+    ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', "dont copy replaced text", opts = { silent = true } },
   },
 }
 
@@ -98,9 +83,6 @@ M.tabufline = {
       end,
       "goto prev buffer",
     },
-
-    -- pick buffers via numbers
-    ["<Bslash>"] = { "<cmd> TbufPick <CR>", "Pick buffer" },
 
     -- close buffer + hide terminal buffer
     ["<leader>x"] = {
@@ -153,7 +135,7 @@ M.lspconfig = {
       "lsp definition",
     },
 
-    ["gh"] = {
+    ["K"] = {
       function()
         vim.lsp.buf.hover()
       end,
@@ -181,7 +163,7 @@ M.lspconfig = {
       "lsp definition type",
     },
 
-    ["<leader>rn"] = {
+    ["<leader>ra"] = {
       function()
         require("nvchad_ui.renamer").open()
       end,
@@ -209,14 +191,14 @@ M.lspconfig = {
       "floating diagnostic",
     },
 
-    ["[e"] = {
+    ["[d"] = {
       function()
         vim.diagnostic.goto_prev()
       end,
       "goto prev",
     },
 
-    ["]e"] = {
+    ["]d"] = {
       function()
         vim.diagnostic.goto_next()
       end,
@@ -265,7 +247,10 @@ M.nvimtree = {
 
   n = {
     -- toggle
-    ["<M-1>"] = { "<cmd> NvimTreeFocus <CR>", "toggle nvimtree" },
+    ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
+
+    -- focus
+    ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "focus nvimtree" },
   },
 }
 
@@ -279,8 +264,7 @@ M.telescope = {
     ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "help page" },
-    ["<leader>fr"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
-    ["<leader>tk"] = { "<cmd> Telescope keymaps <CR>", "show keys" },
+    ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
 
     -- git
     ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "git commits" },

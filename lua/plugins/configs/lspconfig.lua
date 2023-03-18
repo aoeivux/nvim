@@ -1,10 +1,4 @@
-local present, lspconfig = pcall(require, "lspconfig")
-
-if not present then
-  return
-end
-
-require("base46").load_highlight "lsp"
+dofile(vim.g.base46_cache .. "lsp")
 require "nvchad_ui.lsp"
 
 local M = {}
@@ -43,7 +37,7 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-lspconfig.sumneko_lua.setup {
+require("lspconfig").lua_ls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
 
@@ -56,6 +50,8 @@ lspconfig.sumneko_lua.setup {
         library = {
           [vim.fn.expand "$VIMRUNTIME/lua"] = true,
           [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+          [vim.fn.stdpath "data" .. "/lazy/extensions/nvchad_types"] = true,
+          [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
         },
         maxPreload = 100000,
         preloadFileSize = 10000,

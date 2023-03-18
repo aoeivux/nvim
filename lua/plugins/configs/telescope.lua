@@ -1,14 +1,3 @@
-local present, telescope = pcall(require, "telescope")
-local actions = require("telescope.actions")
-
-if not present then
-  return
-end
-
-vim.g.theme_switcher_loaded = true
-
-require("base46").load_highlight "telescope"
-
 local options = {
   defaults = {
     vimgrep_arguments = {
@@ -56,75 +45,11 @@ local options = {
     -- Developer configurations: Not meant for general override
     buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
     mappings = {
-      i = {
-        ["<C-n>"] = actions.cycle_history_next,
-        ["<C-p>"] = actions.cycle_history_prev,
-
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
-
-        ["<C-c>"] = actions.close,
-
-        ["<Down>"] = actions.move_selection_next,
-        ["<Up>"] = actions.move_selection_previous,
-
-        ["<CR>"] = actions.select_default,
-        ["<C-h>"] = actions.select_horizontal,
-        ["<C-v>"] = actions.select_vertical,
-        ["<C-t>"] = actions.select_tab,
-
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
-
-        ["<PageUp>"] = actions.results_scrolling_up,
-        ["<PageDown>"] = actions.results_scrolling_down,
-
-        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-      },
-
-      n = {
-        ["<esc>"] = actions.close,
-        ["<CR>"] = actions.select_default,
-        ["<C-h>"] = actions.select_horizontal,
-        ["<C-v>"] = actions.select_vertical,
-        ["<C-t>"] = actions.select_tab,
-
-        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-
-        ["j"] = actions.move_selection_next,
-        ["k"] = actions.move_selection_previous,
-        ["H"] = actions.move_to_top,
-        ["M"] = actions.move_to_middle,
-        ["L"] = actions.move_to_bottom,
-
-        ["<Down>"] = actions.move_selection_next,
-        ["<Up>"] = actions.move_selection_previous,
-        ["gg"] = actions.move_to_top,
-        ["G"] = actions.move_to_bottom,
-
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
-
-        ["<PageUp>"] = actions.results_scrolling_up,
-        ["<PageDown>"] = actions.results_scrolling_down,
-
-        ["?"] = actions.which_key,
-      },
+      n = { ["q"] = require("telescope.actions").close },
     },
   },
 
   extensions_list = { "themes", "terms" },
 }
 
--- check for any override
-options = require("core.utils").load_override(options, "nvim-telescope/telescope.nvim")
-telescope.setup(options)
-
--- load extensions
-pcall(function()
-  for _, ext in ipairs(options.extensions_list) do
-    telescope.load_extension(ext)
-  end
-end)
+return options

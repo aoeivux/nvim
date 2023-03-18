@@ -1,14 +1,4 @@
-local present, wk = pcall(require, "which-key")
-
-if not present then
-  return
-end
-
-require("base46").load_highlight "whichkey"
-
 local options = {
-  marks = false, -- shows a list of your marks on ' and `
-  registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
 
   icons = {
     breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
@@ -38,6 +28,4 @@ local options = {
   },
 }
 
-options = require("core.utils").load_override(options, "folke/which-key.nvim")
-
-wk.setup(options)
+return options
