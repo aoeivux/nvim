@@ -1,0 +1,68 @@
+{
+	"quick new Vue": {
+		"scope": "javascript,typescript,html",
+		"prefix": "v1",
+		"body": [
+			"const vm = new Vue({",
+				"\tel: '#app',",
+				"\tdata: {",
+					"\t\tname: '$2',",
+				"\t}",
+			"})"
+		],
+		"description": "quick new Vue"
+	},
+	
+	"script type javascript": {
+		"scope": "javascript,typescript,html",
+		"prefix": "script",
+		"body": [
+			"<script type=\"text/javascript\">\n\t$0\n<\/script>"
+		],
+		"description": "quick new Vue"
+	},
+
+	"quick generate html inline vue": {
+		"scope": "javascript,typescript,html",
+		"prefix": "!!",
+		"body": [
+				
+			"<!DOCTYPE html>",
+			"<html lang=\"en\">",
+			"<head>",
+				"\t<meta charset=\"UTF-8\">",
+				"\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
+				"\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+				"\t<title></title>",
+				"\t<script src=\"vue.js\"></script>",
+			"</head>",
+			"<body>",
+				"\t<div id=\"app\">",
+				
+				"\t</div>",
+			"</body>",
+
+			"<script type=\"text/javascript\">",
+				"\tconst vm = new Vue({",
+					"\t\tel: '#app',",
+					"\t\tdata: {",
+						"\t\t\tname: '',",
+					"\t\t}",
+				"\t})",
+			"</script>",
+
+			"</html>"
+		],
+		"description": "quick generate html inline vue"
+	},
+	"arrow function": {
+		"scope": "javascript,typescript,html,vue",
+		"prefix": "lam",
+		"body": [
+			"($1) => {",
+			"\t//函数体",
+			"\t$0",
+			"}"
+		]
+	}
+}
