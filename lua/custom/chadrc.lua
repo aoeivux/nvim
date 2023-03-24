@@ -8,7 +8,7 @@ M.ui = {
 	theme = "onedark",
 	hl_override = highlights.override,
 	hl_add = highlights.add,
-	transparency = false,
+	transparency = true,
 	-- cmp themeing
 	cmp = {
 		icons = true,
