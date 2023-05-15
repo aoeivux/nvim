@@ -63,9 +63,9 @@ return {
         "css-lsp",
         "html-lsp",
         -- "typescript-language-server",
-        "tailwindcss-language-server",
-        "json-lsp",
-        "deno",
+        -- "tailwindcss-language-server",
+        -- "json-lsp",
+        -- "deno",
         -- java web application
         "jdtls",
         -- go lsp
@@ -79,6 +79,7 @@ return {
   },
   {
     "nvim-tree/nvim-tree.lua",
+		commit = "8f392fa763b7ee80a48c714b630acaf6d1fe1854",
     lazy = true,
     opts = {
       update_cwd = true,
@@ -208,29 +209,8 @@ return {
         ["<C-u>"] = cmp.mapping.scroll_docs(4),
         ["<C-S-p>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.close(),
-        ["<Enter>"] = cmp.mapping.confirm {
-          behavior = cmp.ConfirmBehavior.Replace,
-          select = false,
-        },
-        ["<TAB>"] = cmp.mapping(function(fallback)
-        	if cmp.visible() then
-        		cmp.select_next_item()
-        	else
-        		fallback()
-        	end
-        end, {
-        	"i",
-        	"s",
-        }),
-        ["<S-TAB>"] = cmp.mapping(function(fallback)
-        	if cmp.visible() then
-        		cmp.select_prev_item()
-        	else
-        		fallback()
-        	end
-        end, {
-        	"i",
-        	"s",
+        ["<TAB>"] = cmp.mapping.confirm ({
+          select = true,
         }),
       },
     },
