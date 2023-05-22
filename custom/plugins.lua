@@ -68,6 +68,8 @@ return {
         -- "deno",
         -- java web application
         "jdtls",
+		-- python,
+		"pyright",
         -- go lsp
         "gopls",
         -- rust lsp
