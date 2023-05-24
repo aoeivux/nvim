@@ -10,7 +10,6 @@ dap.adapters.delve = {
   },
 }
 
-
 -- Configurations
 --
 dap.configurations.go = {

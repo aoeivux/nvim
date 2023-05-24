@@ -1,8 +1,14 @@
 local actions = require "telescope.actions"
 local cmp = require "cmp"
-
 return {
   { "folke/which-key.nvim", enabled = true },
+  {
+    "ray-x/lsp_signature.nvim",
+    lazy = false,
+    config = function()
+      require "custom.configs.lsp-signature"
+    end,
+  },
   -- Override plugin definition options
   {
     "neovim/nvim-lspconfig",
@@ -68,8 +74,8 @@ return {
         -- "deno",
         -- java web application
         "jdtls",
-		-- python,
-		"pyright",
+        -- python,
+        "pyright",
         -- go lsp
         "gopls",
         -- rust lsp
@@ -81,7 +87,7 @@ return {
   },
   {
     "nvim-tree/nvim-tree.lua",
-		commit = "8f392fa763b7ee80a48c714b630acaf6d1fe1854",
+    commit = "8f392fa763b7ee80a48c714b630acaf6d1fe1854",
     lazy = true,
     opts = {
       update_cwd = true,
@@ -180,7 +186,7 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    lazy = false,
     dependencies = {
       {
         -- snippet plugin
@@ -203,17 +209,15 @@ return {
     },
     opts = {
       mapping = {
-        ["<C-n>"] = cmp.mapping.select_next_item(),
-        ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-u>"] = cmp.mapping.scroll_docs(4),
-        ["<C-S-p>"] = cmp.mapping.complete(),
+        ["<C-p>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.close(),
-        ["<TAB>"] = cmp.mapping.confirm ({
+        ["<TAB>"] = cmp.mapping.confirm {
           select = true,
-        }),
+        },
       },
     },
   },
@@ -257,5 +261,14 @@ return {
   },
   {
     "L3MON4D3/LuaSnip",
+  },
+
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require "custom.configs.copilot"
+    end,
   },
 }

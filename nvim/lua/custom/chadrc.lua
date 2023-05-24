@@ -4,8 +4,8 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-	theme_toggle = { "onenord", "one_light" },
-	theme = "onenord",
+	theme_toggle = { "chadracula", "one_light" },
+	theme = "chadracula",
 	hl_override = highlights.override,
 	hl_add = highlights.add,
 	transparency = true,
@@ -33,7 +33,7 @@ M.ui = {
 	},
 	-- nvdash (dashboard)
 	nvdash = {
-		load_on_startup = true,
+		load_on_startup = false,
 		header = {
 			"           ▄ ▄                   ",
 			"       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",

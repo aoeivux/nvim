@@ -17,14 +17,13 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -- save last place
 autocmd(
-	{ "BufReadPost" },
-	{ pattern = "*", command = [[if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]] }
+  { "BufReadPost" },
+  { pattern = "*", command = [[if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]] }
 )
 
 -- auto change dir noautochdir
-vim.api.nvim_command('set noacd')
+vim.api.nvim_command "set noacd"
 vim.cmd [[ autocmd VimEnter * set noacd ]]
-
 
 -- gerneral
 opt.scrolloff = 8
@@ -43,10 +42,10 @@ opt.swapfile = false
 
 -- Custom Indenting
 opt.expandtab = false
-opt.tabstop=2
-opt.shiftwidth=2
-opt.softtabstop=2
-opt.autoindent=true
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
+opt.autoindent = true
 
 -- Others
 opt.relativenumber = true
@@ -56,7 +55,9 @@ opt.smartcase = true
 opt.showmode = true
 opt.showcmd = true
 opt.wildmenu = true
-opt.history=1000
+opt.history = 1000
+
+opt.pumheight = 10
 
 -- Detecting file to indent
 -- vim.cmd[[
@@ -68,11 +69,8 @@ opt.history=1000
 -- autocmd Filetype java setlocal ts=2 sw=2 sts=0 expandtab
 -- ]]
 
-
-
 -- NvimTree open on setup
 local function open_nvim_tree(data)
-
   -- buffer is a directory
   local directory = vim.fn.isdirectory(data.file) == 1
 
