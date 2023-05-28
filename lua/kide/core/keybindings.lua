@@ -37,8 +37,8 @@ M.setup = function()
   map("n", "<Leader>W", ":%bd<CR>", opt)
   map("n", "Q", ":q<CR>", opt)
   -- buffer
-  map("n", "<leader>n", ":BufferLineCycleNext <CR>", opt)
-  map("n", "<leader>p", ":BufferLineCyclePrev <CR>", opt)
+  map("n", "<TAB>", ":BufferLineCycleNext <CR>", opt)
+  map("n", "<S-TAB>", ":BufferLineCyclePrev <CR>", opt)
   -- window
   map("n", "<A-[>", ":vertical resize +5 <CR>", opt)
   map("n", "<A-]>", ":vertical resize -5  <CR>", opt)
