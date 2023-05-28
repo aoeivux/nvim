@@ -1,6 +1,4 @@
-plugin
-spell
-ftplugin
-coc-settings.json
+.netrwhist
 .luarc.json
+plugin
 lazy-lock.json
