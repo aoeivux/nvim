@@ -32,10 +32,10 @@ M.setup = function()
   vim.api.nvim_create_user_command("BufferCloseOther", function()
     require("kide.core.utils").close_other_bufline()
   end, {})
-  map("n", "<Leader>s", ":w<CR>", opt)
+  map("n", "S", ":w<CR>", opt)
   map("n", "<Leader>w", ":bd<CR>", opt)
   map("n", "<Leader>W", ":%bd<CR>", opt)
-  map("n", "<Leader>q", ":q<CR>", opt)
+  map("n", "Q", ":q<CR>", opt)
   -- buffer
   map("n", "<leader>n", ":BufferLineCycleNext <CR>", opt)
   map("n", "<leader>p", ":BufferLineCyclePrev <CR>", opt)
@@ -255,45 +255,18 @@ M.cmp = function(cmp)
     -- ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-p>"] = cmp.mapping.select_prev_item(),
     ["<C-n>"] = cmp.mapping.select_next_item(),
-    ["<C-j>"] = cmp.mapping.select_prev_item(),
-    ["<C-k>"] = cmp.mapping.select_next_item(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
-    ["<CR>"] = cmp.mapping.confirm({
+    ["<TAB>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       -- select = true,
     }),
 
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      local neogen = require("neogen")
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      elseif neogen.jumpable() then
-        neogen.jump_next()
-      elseif has_words_before() then
-        cmp.complete()
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      local neogen = require("neogen")
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      elseif neogen.jumpable(true) then
-        neogen.jump_prev()
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
   }
 end
 
