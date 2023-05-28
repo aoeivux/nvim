@@ -18,6 +18,11 @@ M.setup = function()
   -- 取消搜索高亮显示
   map("n", ";h", ":nohlsearch<CR>", opt)
   map("n", "<Esc>", ":nohlsearch<CR>", opt)
+  -- 快速移动
+  map("n", "K", "5k", opt)
+  map("n", "J", "5j", opt)
+  map("v", "J", "5j", opt)
+  map("v", "K", "5k", opt)
 
   keymap("n", "<C-h>", "<C-w>h", opt)
   keymap("n", "<C-j>", "<C-w>j", opt)
@@ -143,7 +148,7 @@ M.maplsp = function(client, buffer)
   vim.api.nvim_buf_set_option(buffer, "formatexpr", "v:lua.vim.lsp.formatexpr()")
 
   local bufopts = { noremap = true, silent = true, buffer = buffer }
-  vim.api.nvim_buf_set_keymap(buffer, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
+  -- vim.api.nvim_buf_set_keymap(buffer, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
   -- rename
   vim.api.nvim_buf_set_keymap(buffer, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
   -- mapbuf('n', '<leader>rn', '<cmd>lua require("lspsaga.rename").rename()<CR>', opt)
