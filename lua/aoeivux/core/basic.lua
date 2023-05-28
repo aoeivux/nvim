@@ -166,7 +166,7 @@ vim.opt_global.grepformat = "%f:%l:%c:%m,%f:%l:%m"
 
 --- see https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 local function augroup(name)
-  return vim.api.nvim_create_augroup("kide" .. name, { clear = true })
+  return vim.api.nvim_create_augroup("aoeivux" .. name, { clear = true })
 end
 -- Highlight on yank
 autocmd({ "TextYankPost" }, {

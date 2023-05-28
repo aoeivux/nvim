@@ -102,7 +102,7 @@ M.maven_command = function(buf)
 end
 
 M.setup = function()
-  local group = vim.api.nvim_create_augroup("kide_jdtls_java_maven", { clear = true })
+  local group = vim.api.nvim_create_augroup("aoeivux_jdtls_java_maven", { clear = true })
   vim.api.nvim_create_autocmd({ "FileType" }, {
     group = group,
     pattern = { "xml", "java" },

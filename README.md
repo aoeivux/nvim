@@ -65,7 +65,7 @@ git clone  https://github.com/JavaHello/nvim.git
 | Java: 刷新 Main 方法 Debug 配置 |      `Command`       | `:JdtRefreshDebugConfigs` |
 |       Java: 预览项目依赖        |      `Command`       |      `:JavaProjects`      |
 
-更多配置参考 [keybindings](./lua/kide/core/keybindings.lua) 文件
+更多配置参考 [keybindings](./lua/aoeivux/core/keybindings.lua) 文件
 
 ## Java 配置
 

@@ -20,7 +20,7 @@ require("rest-nvim").setup({
   custom_dynamic_variables = {},
   yank_dry_run = true,
 })
-local group = vim.api.nvim_create_augroup("kide_jdtls_rest_http", { clear = true })
+local group = vim.api.nvim_create_augroup("aoeivux_jdtls_rest_http", { clear = true })
 vim.api.nvim_create_autocmd({ "FileType" }, {
   group = group,
   pattern = { "http" },

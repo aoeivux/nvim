@@ -12,7 +12,7 @@ end
 
 -- pandoc --pdf-engine=xelatex --highlight-style tango -N --toc -V CJKmainfont="Yuanti SC" -V mainfont="Hack" -V geometry:"top=2cm, bottom=1.5cm, left=2cm, right=2cm" test.md -o out.pdf
 M.markdown_to_pdf = function()
-  local group = vim.api.nvim_create_augroup("kide_utils_pandoc", { clear = true })
+  local group = vim.api.nvim_create_augroup("aoeivux_utils_pandoc", { clear = true })
   vim.api.nvim_create_autocmd({ "FileType" }, {
     group = group,
     pattern = { "markdown" },
