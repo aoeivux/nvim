@@ -34,8 +34,8 @@ vim.opt.ruler = false
 vim.opt.pumheight = 10
 
 -- 高亮所在行
-vim.opt.cursorline = true
-vim.opt.cursorcolumn = true
+vim.opt.cursorline = false
+vim.opt.cursorcolumn = false
 
 -- 右侧参考线，超过表示代码太长了，考虑换行
 vim.opt.colorcolumn = "120"
