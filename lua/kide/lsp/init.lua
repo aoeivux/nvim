@@ -20,7 +20,6 @@ mason_lspconfig.setup({
 		-- rust lsp
 		-- "rust-analyzer",
 		-- go debug
-		"delve"
   },
 })
 
