@@ -1,0 +1,5 @@
+require("lazy_bootstrap")
+require("aoeivux.plugins.lazy-plugins")
+vim.schedule(function()
+  require("aoeivux.core.keybindings").setup()
+end)

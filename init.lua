@@ -1,2 +1,2 @@
-require("kide.core")
-require("kide.plugins")
+require("aoeivux.core")
+require("aoeivux.plugins")
