@@ -2,6 +2,25 @@ local mason_lspconfig = require("mason-lspconfig")
 mason_lspconfig.setup({
   ensure_installed = {
     "lua_ls",
+		"stylua",
+		-- web dev stuff
+		"css-lsp",
+		"html-lsp",
+    "clangd",
+		-- "typescript-language-server",
+		-- "tailwindcss-language-server",
+		-- "json-lsp",
+		-- "deno",
+		-- java web application
+		"jdtls",
+		-- python,
+		"pyright",
+		-- go lsp
+		"gopls",
+		-- rust lsp
+		-- "rust-analyzer",
+		-- go debug
+		"delve"
   },
 })
 
