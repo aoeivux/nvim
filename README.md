@@ -10,14 +10,14 @@
 
 ```sh
 cd ~/.config
-git clone  https://github.com/JavaHello/nvim.git
+git clone  https://github.com/aoeivux/nvim.git
 ```
 
 ### Windows
 
 ```sh
 cd $env:LOCALAPPDATA
-git clone  https://github.com/JavaHello/nvim.git
+git clone  https://github.com/aoeivux/nvim.git
 ```
 
 ## 依赖
