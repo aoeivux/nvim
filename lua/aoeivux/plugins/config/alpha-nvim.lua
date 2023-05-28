@@ -33,11 +33,11 @@ dashboard.section.buttons.val = {
 	dashboard.button("<leader>  fg", "󰈭  Find Word  ", ":Telescope live_grep<CR>", opt),
 	dashboard.button(
 		"<leader>  fp",
-		"  Recent Projects",
+		"  Recent Projects",
 		":lua require'telescope'.extensions.project.project{ display_type = 'full' }<CR>",
 		opt
 	),
-	dashboard.button("<leader>  fo", "  Recent File", ":Telescope oldfiles<CR>", opt),
+	dashboard.button("<leader>  fr", "  Recent File", ":Telescope oldfiles<CR>", opt),
 	dashboard.button("<leader>  ns", "  Settings", ":e $MYVIMRC | :cd %:p:h <CR>", opt),
 	dashboard.button("<leader>  q ", "󰅙  Quit NVIM", ":qa<CR>", opt),
 }
