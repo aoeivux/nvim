@@ -21,6 +21,7 @@ require("lazy").setup({
     config = function()
       require("kide.plugins.config.mason-nvim")
     end,
+    build = ":MasonUpdate" -- :MasonUpdate updates registry contents
   },
   {
     "williamboman/mason-lspconfig.nvim",
