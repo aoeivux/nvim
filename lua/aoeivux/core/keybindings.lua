@@ -251,7 +251,7 @@ M.cmp = function(cmp)
       c = cmp.mapping.close(),
     }),
     ["<TAB>"] = cmp.mapping.confirm({
-      select = false,
+      select = true,
     }),
 
   }
