@@ -192,9 +192,6 @@ require("lazy").setup({
     lazy = true,
     ft = "scala",
     dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("aoeivux.lsp.metals").setup()
-    end,
   },
   -- debug
   {
