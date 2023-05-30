@@ -19,12 +19,8 @@ require("lazy").setup({
     lazy = true,
     event = { "VeryLazy" },
     config = function()
-      require("aoeivux.plugins.config.mason-nvim")
+      require("aoeivux.lsp.mason")
     end,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    lazy = true,
   },
   {
     "neovim/nvim-lspconfig",
@@ -410,16 +406,6 @@ require("lazy").setup({
       })
     end,
   },
-  -- pandoc 命令插件(用于md转pdf)
-  {
-    "aspeddro/pandoc.nvim",
-    lazy = true,
-    ft = "markdown",
-    config = function()
-      require("aoeivux.plugins.config.pandoc")
-    end,
-  },
-
   -- 快捷键查看
   {
     "folke/which-key.nvim",
@@ -477,11 +463,11 @@ require("lazy").setup({
     },
   },
 
-  -- rust
-  {
-    "simrat39/rust-tools.nvim",
-    lazy = true,
-  },
+  -- -- rust
+  -- {
+  --   "simrat39/rust-tools.nvim",
+  --   lazy = true,
+  -- },
 
   {
     "NTBBloodbath/rest.nvim",

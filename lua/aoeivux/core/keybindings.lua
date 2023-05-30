@@ -81,9 +81,6 @@ M.setup = function()
   map("n", "<leader>te", ":Translate EN -source=ZH -parse_after=window -output=floating<cr>", opt)
   map("v", "<leader>te", ":Translate EN -source=ZH -parse_after=window -output=floating<cr>", opt)
 
-  -- camel_case
-  require("aoeivux.core.utils").camel_case_init()
-
   -- nvim-dap
   keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opt)
   keymap("n", "<F6>", ":lua require'dap'.step_over()<CR>", opt)
