@@ -40,6 +40,7 @@ require("lspconfig").lua_ls.setup {
           [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
           [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
         },
+        checkThirdParty = false, -- THIS IS THE IMPORTANT LINE TO ADD
         maxPreload = 100000,
         preloadFileSize = 10000,
       },
