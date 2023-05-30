@@ -9,7 +9,6 @@ mason_lspconfig.setup({
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 -- { key: 语言 value: 配置文件 }
 local server_configs = {
-  -- sumneko_lua -> lua_ls
   lua_ls = require("aoeivux.lsp.lua_ls"), -- /lua/lsp/lua.lua
   jdtls = require("aoeivux.lsp.java"), -- /lua/lsp/jdtls.lua
   metals = require("aoeivux.lsp.metals"), -- /lua/lsp/jdtls.lua
