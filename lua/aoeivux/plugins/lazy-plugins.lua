@@ -16,11 +16,15 @@ require("lazy").setup({
   },
   {
     "williamboman/mason.nvim",
-    lazy = true,
-    event = { "VeryLazy" },
     config = function()
       require("aoeivux.lsp.mason")
     end,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function ()
+      require("aoeivux.lsp.mason-lspconfig")
+    end
   },
   {
     "neovim/nvim-lspconfig",
