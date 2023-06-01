@@ -16,13 +16,18 @@ M.setup = function()
   -- n 模式下粘贴系统剪切板的内容
   map("n", "<Leader>v", '"+p', opt)
   -- 取消搜索高亮显示
-  map("n", ";h", ":nohlsearch<CR>", opt)
+  map("n", ";l", ":nohlsearch<CR>", opt)
   map("n", "<Esc>", ":nohlsearch<CR>", opt)
   -- 快速移动
   map("n", "K", "5k", opt)
   map("n", "J", "5j", opt)
   map("v", "J", "5j", opt)
   map("v", "K", "5k", opt)
+
+  map("n", "H", "^", opt)
+  map("n", "L", "$", opt)
+  map("v", "H", "^", opt)
+  map("v", "L", "$", opt)
 
   keymap("n", "<C-h>", "<C-w>h", opt)
   keymap("n", "<C-j>", "<C-w>j", opt)
