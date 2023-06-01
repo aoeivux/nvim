@@ -495,13 +495,11 @@ require("lazy").setup({
   -- 快速跳转
   {
     "ggandor/leap.nvim",
-    lazy = true,
-    keys = { "f", "F" },
+    lazy = false,
     config = function()
-      require("leap").add_default_mappings()
-      require("leap").opts.safe_labels = {}
-      vim.keymap.del({ "x", "o" }, "x")
-      vim.keymap.del({ "x", "o" }, "X")
+      require("leap").opts.highlight_unlabeled_phase_one_targets = true
+      vim.keymap.set({ "x", "o", "n" }, "f", "<Plug>(leap-forward-to)")
+      vim.keymap.set({ "x", "o", "n" }, "F", "<Plug>(leap-backward-to)")
     end,
   },
 
