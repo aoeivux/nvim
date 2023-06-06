@@ -29,6 +29,9 @@ M.setup = function()
   map("v", "H", "^", opt)
   map("v", "L", "$", opt)
 
+  map("v", ">", ">gv", opt)
+  map("v", "<", "<gv", opt)
+
   keymap("n", "<C-h>", "<C-w>h", opt)
   keymap("n", "<C-j>", "<C-w>j", opt)
   keymap("n", "<C-k>", "<C-w>k", opt)
