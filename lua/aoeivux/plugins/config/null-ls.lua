@@ -32,16 +32,6 @@ local sources = {
   null_ls.builtins.formatting.shfmt,
   -- lua
   null_ls.builtins.formatting.stylua,
-  -- word
-  null_ls.builtins.diagnostics.write_good.with({
-    method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-  }),
-  -- md
-  -- null_ls.builtins.diagnostics.markdownlint.with({
-  --   method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-  -- }),
-  -- null_ls.builtins.code_actions.gitsigns,
-  -- sql
   null_ls.builtins.formatting.sql_formatter.with({
     filetypes = {
       "sql",
