@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require "swaylivrx.basic"
 require "swaylivrx.maps"
 require "swaylivrx.plugins"
@@ -20,3 +21,7 @@ end
 if is_win then
 	vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
 end
+=======
+require("aoeivux.core")
+require("aoeivux.plugins")
+>>>>>>> master
