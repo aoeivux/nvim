@@ -187,12 +187,6 @@ require("lazy").setup({
     ft = "java",
     dependencies = "mfussenegger/nvim-jdtls",
   },
-  {
-    "scalameta/nvim-metals",
-    lazy = true,
-    ft = "scala",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
   -- debug
   {
     "mfussenegger/nvim-dap",
@@ -427,11 +421,6 @@ require("lazy").setup({
       require("aoeivux.plugins.config.alpha-nvim")
     end,
   },
-  -- StartupTime
-  {
-    "dstein64/vim-startuptime",
-    cmd = "StartupTime",
-  },
   -- 自动对齐插件
   {
     "junegunn/vim-easy-align",
@@ -458,7 +447,6 @@ require("lazy").setup({
     end,
   },
 
-  -- 任务插件
   {
     "itchyny/calendar.vim",
     lazy = true,
@@ -466,22 +454,6 @@ require("lazy").setup({
       "Calendar",
     },
   },
-
-  -- -- rust
-  -- {
-  --   "simrat39/rust-tools.nvim",
-  --   lazy = true,
-  -- },
-
-  {
-    "NTBBloodbath/rest.nvim",
-    lazy = true,
-    ft = "http",
-    config = function()
-      require("aoeivux.plugins.config.rest-nvim")
-    end,
-  },
-
   -- 选中高亮插件
   {
     "RRethy/vim-illuminate",
@@ -571,18 +543,6 @@ require("lazy").setup({
     ft = "plantuml",
   },
 
-  -- 浏览器搜索
-  {
-    "lalitmee/browse.nvim",
-    lazy = true,
-    cmd = {
-      "Browse",
-    },
-    config = function()
-      require("aoeivux.plugins.config.browse-nvim")
-    end,
-  },
-
   -- 环绕输入
   {
     "kylechui/nvim-surround",
@@ -608,83 +568,11 @@ require("lazy").setup({
       require("aoeivux.plugins.config.nvim-navic")
     end,
   },
-
-  -- 笔记
-  {
-    "mickael-menu/zk-nvim",
-    lazy = true,
-    cmd = {
-      "ZkIndex",
-      "ZkNew",
-      "ZkNotes",
-    },
-    config = function()
-      require("aoeivux.plugins.config.zk-nvim")
-    end,
-  },
-
-  -- 折叠
-  {
-    "kevinhwang91/promise-async",
-    lazy = true,
-  },
-  {
-    "kevinhwang91/nvim-ufo",
-    lazy = true,
-    event = { "BufReadPost" },
-    config = function()
-      require("aoeivux.plugins.config.nvim-ufo")
-    end,
-  },
-
-  -- ui
-  {
-    "MunifTanjim/nui.nvim",
-    lazy = true,
-  },
-
-  -- chatgpt
-  {
-    "jackMort/ChatGPT.nvim",
-    lazy = true,
-    cmd = {
-      "ChatGPT",
-    },
-    config = function()
-      require("chatgpt").setup({
-        keymaps = {
-          submit = "<C-e>",
-        },
-      })
-    end,
-  },
   {
     "folke/todo-comments.nvim",
     lazy = true,
     config = function()
       require("todo-comments").setup({})
-    end,
-  },
-  {
-    "zbirenbaum/copilot.lua",
-    enabled = config.plugin.copilot.enable,
-    lazy = true,
-    cmd = "Copilot",
-    config = function()
-      require("copilot").setup({
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-      })
-    end,
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    enabled = config.plugin.copilot.enable,
-    lazy = true,
-    dependencies = { "zbirenbaum/copilot.lua" },
-    event = { "InsertEnter", "VeryLazy" },
-    config = function()
-      require("copilot_cmp").setup()
     end,
   },
 }, {

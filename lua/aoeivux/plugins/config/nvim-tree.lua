@@ -1,6 +1,3 @@
-local function custom_callback(callback_name)
-	return string.format(":lua require('aoeivux.plugins.config.utils.treeutil').%s()<CR>", callback_name)
-end
 require("nvim-tree").setup({
 	disable_netrw = true,
 	hijack_netrw = true,
