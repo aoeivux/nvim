@@ -142,8 +142,8 @@ require("lazy").setup({
   -- 文件管理
   {
     "kyazdani42/nvim-tree.lua",
-    lazy = true,
-    cmd = "NvimTreeToggle",
+    lazy = false,
+    cmd = {"NvimTreeToggle", "NvimTreeFocus"},
     version = "*",
     config = function()
       require("aoeivux.plugins.config.nvim-tree")

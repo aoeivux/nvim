@@ -1,3 +1,24 @@
+local function my_on_attach(bufnr)
+  local api = require('nvim-tree.api')
+  local status, api = pcall(require, "nvim-tree.api")
+  if (not status) then 
+    print("not api")
+  end
+  
+  local function opts(desc)
+    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  api.config.mappings.default_on_attach(bufnr)
+
+  vim.keymap.set('n', 'h',     api.tree.change_root_to_parent,        opts('Up'))
+  vim.keymap.set('n', 'l',     api.node.open.edit,                    opts('Open'))
+  vim.keymap.set('n', 'P', function()
+    local node = api.tree.get_node_under_cursor()
+    print(node.absolute_path)
+  end, opts('Print Node Path'))
+end
+
 require("nvim-tree").setup({
 	disable_netrw = true,
 	hijack_netrw = true,
@@ -12,7 +33,7 @@ require("nvim-tree").setup({
 			global = false,
 		},
 		open_file = {
-			quit_on_open = true,
+			quit_on_open = false,
 			resize_window = true,
 			window_picker = {
 				enable = true,
@@ -51,16 +72,6 @@ require("nvim-tree").setup({
 		number = false,
 		relativenumber = false,
 		signcolumn = "yes",
-		mappings = {
-			custom_only = false,
-			list = {
-				-- user mappings go here
-				{ key = { "l", "<CR>", "o" }, action = "edit" },
-				{ key = "h",                  action = "close_node" },
-				{ key = "v",                  action = "vsplit" },
-				{ key = "O",                  action = "cd" },
-			},
-		},
 	},
 	renderer = {
 		root_folder_label = false,
