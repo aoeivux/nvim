@@ -17,8 +17,6 @@ require("nvim-treesitter.configs").setup({
     "http",
     "bash",
     "markdown",
-    "org",
-    "norg",
     "kotlin",
     "vue",
   },

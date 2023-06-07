@@ -122,7 +122,6 @@ M.setup = function()
 
   -- nvimTree
   map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
-  map("i", "<M-1>", ":NvimTreeFocus<CR>", opt)
   map("n", "<M-1>", ":NvimTreeFocus<CR>", opt)
 
 
