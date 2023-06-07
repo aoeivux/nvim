@@ -163,7 +163,7 @@ require("lazy").setup({
   -- treesitter (新增)
   {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufNewFile", "BufReadPost" },
+ 	cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
     config = function()
       require("aoeivux.plugins.config.nvim-treesitter")
@@ -180,12 +180,6 @@ require("lazy").setup({
     "mfussenegger/nvim-jdtls",
     lazy = true,
     ft = "java",
-  },
-  {
-    "JavaHello/java-deps.nvim",
-    lazy = true,
-    ft = "java",
-    dependencies = "mfussenegger/nvim-jdtls",
   },
   -- debug
   {
