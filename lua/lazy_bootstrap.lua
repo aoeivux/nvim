@@ -1,3 +1,5 @@
+local api = vim.api
+local opt_local = vim.opt_local
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -9,4 +11,5 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+require "aoeivux.core.post_bootstrap"()
 vim.opt.rtp:prepend(lazypath)

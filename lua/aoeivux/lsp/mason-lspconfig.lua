@@ -1,7 +1,6 @@
-require("mason-lspconfig").setup {
+local options = {
     ensure_installed = {
       "lua_ls",
-      -- web dev stuff
       "cssls",
       "html",
       -- "typescript-language-server",
@@ -22,3 +21,5 @@ require("mason-lspconfig").setup {
     },
     automatic_installation = true
 }
+
+return options

@@ -22,9 +22,18 @@ require("lazy").setup({
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    config = function ()
-      require("aoeivux.lsp.mason-lspconfig")
-    end
+    cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
+    lazy = true,
+    opts = function ()
+        return require("aoeivux.lsp.mason-lspconfig")
+    end,
+    config = function(_, opts)
+      require("mason-lspconfig").setup(opts)
+      vim.api.nvim_create_user_command("MasonInstallAll", function()
+        vim.cmd("MasonInstall " .. table.concat(opts.ensure_installed, " "))
+      end, {})
+      vim.g.mason_binaries_list = opts.ensure_installed
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -106,8 +115,8 @@ require("lazy").setup({
 
   {
     "jose-elias-alvarez/null-ls.nvim",
-    lazy = true,
-    event = { "BufNewFile", "BufReadPost" },
+    lazy = false,
+    -- event = { "BufNewFile", "BufReadPost" },
     config = function()
       require("aoeivux.plugins.config.null-ls")
     end,
@@ -143,7 +152,7 @@ require("lazy").setup({
   {
     "kyazdani42/nvim-tree.lua",
     lazy = false,
-    cmd = {"NvimTreeToggle", "NvimTreeFocus"},
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     version = "*",
     config = function()
       require("aoeivux.plugins.config.nvim-tree")
@@ -163,7 +172,7 @@ require("lazy").setup({
   -- treesitter (新增)
   {
     "nvim-treesitter/nvim-treesitter",
- 	cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
     config = function()
       require("aoeivux.plugins.config.nvim-treesitter")
@@ -472,7 +481,7 @@ require("lazy").setup({
   -- LSP 进度
   {
     "j-hui/fidget.nvim",
-    tag = "legacy",-- NOTE: fidget.nvim will soon be completely rewritten. In the meantime, please pin your plugin config to the legacy tag to avoid breaking changes.
+    tag = "legacy", -- NOTE: fidget.nvim will soon be completely rewritten. In the meantime, please pin your plugin config to the legacy tag to avoid breaking changes.
     lazy = true,
     config = function()
       require("fidget").setup({

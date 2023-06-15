@@ -201,8 +201,17 @@ M.maplsp = function(client, buffer)
     "<cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>",
     opt
   )
+  -- keymap("n", "<leader>fm", function() vim.lsp.buf.format { async = true } end, bufopts)
+  --
+  -- vim.api.nvim_buf_set_keymap(
+  --   buffer,
+  --   "v",
+  --   "<leader>fm",
+  --   
+  --   opt
+  -- )
 
-  keymap("n", "<leader>fm", function()
+ keymap("n", "<leader>fm", function()
     local bfn = vim.api.nvim_get_current_buf()
     vim.lsp.buf.format({
       bufnr = bfn,
@@ -214,10 +223,11 @@ M.maplsp = function(client, buffer)
   vim.api.nvim_buf_set_keymap(
     buffer,
     "v",
-    "<leader>fm",
-    '<cmd>lua require("aoeivux.lsp.utils").format_range_operator()<CR>',
+        "<leader>fm",
+        '<cmd>lua require("aoeivux.lsp.utils").format_range_operator()<CR>',
     opt
   )
+
 
   vim.api.nvim_buf_set_keymap(buffer, "n", "<leader>td", "<cmd>Telescope diagnostics<CR>", opt)
   vim.api.nvim_buf_set_keymap(
