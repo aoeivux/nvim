@@ -22,8 +22,8 @@ require("lazy").setup({
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
     lazy = true,
+    cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
     opts = function ()
         return require("aoeivux.lsp.mason-lspconfig")
     end,

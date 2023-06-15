@@ -10,6 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
     "--branch=stable", -- latest stable release
     lazypath,
   })
+
+  require "aoeivux.core.post_bootstrap"()
 end
-require "aoeivux.core.post_bootstrap"()
 vim.opt.rtp:prepend(lazypath)
