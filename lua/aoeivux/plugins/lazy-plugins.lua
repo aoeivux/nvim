@@ -472,6 +472,7 @@ require("lazy").setup({
   -- LSP 进度
   {
     "j-hui/fidget.nvim",
+    tag = "legacy",-- NOTE: fidget.nvim will soon be completely rewritten. In the meantime, please pin your plugin config to the legacy tag to avoid breaking changes.
     lazy = true,
     config = function()
       require("fidget").setup({
