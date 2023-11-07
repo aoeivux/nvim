@@ -30,6 +30,11 @@ git clone  https://github.com/aoeivux/nvim.git
 - [yarn](https://yarnpkg.com/)
 - [fzf](https://github.com/junegunn/fzf)
 
+如果你是一个全新的Windows操作系统用户，请在终端运行`nvim`之前确保安装相关依赖，可运行以下命令安装：
+```shell
+scoop install nodejs python make fzf ripgrep fd gcc 
+```
+
 其他依赖可选安装,使用 [mason.nvim](https://github.com/williamboman/mason.nvim)
 
 > 此配置在 Linux, Mac, Windows (推荐使用 [scoop](https://scoop.sh/) 安装依赖) 系统上长期使用
