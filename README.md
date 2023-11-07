@@ -28,6 +28,7 @@ git clone  https://github.com/aoeivux/nvim.git
 - [maven](https://maven.apache.org/)
 - [nodejs](https://nodejs.org/en)
 - [yarn](https://yarnpkg.com/)
+- [fzf](https://github.com/junegunn/fzf)
 
 其他依赖可选安装,使用 [mason.nvim](https://github.com/williamboman/mason.nvim)
 
