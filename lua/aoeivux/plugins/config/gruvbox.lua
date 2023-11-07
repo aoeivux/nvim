@@ -1,4 +1,4 @@
-local transparent_mode = false
+local transparent_mode = true
 local overrides = {}
 if transparent_mode then
   overrides.Pmenu = {
