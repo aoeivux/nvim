@@ -163,7 +163,7 @@ require("lazy").setup({
   {
     "akinsho/bufferline.nvim",
     version = "*",
-    requires = "kyazdani42/nvim-web-devicons",
+    require = "kyazdani42/nvim-web-devicons",
     config = function()
       require("aoeivux.plugins.config.bufferline")
     end,
@@ -269,12 +269,12 @@ require("lazy").setup({
   -- git
   {
     "tpope/vim-fugitive",
-    layz = true,
+    lazy = true,
     cmd = { "Git" },
   },
   {
     "sindrets/diffview.nvim",
-    layz = true,
+    lazy = true,
     cmd = {
       "DiffviewClose",
       "DiffviewFileHistory",
@@ -290,7 +290,7 @@ require("lazy").setup({
   },
   {
     "TimUntersberger/neogit",
-    layz = true,
+    lazy = true,
     cmd = "Neogit",
     dependencies = { "sindrets/diffview.nvim" },
     config = function()
@@ -301,7 +301,7 @@ require("lazy").setup({
   -- git edit 状态显示插件
   {
     "lewis6991/gitsigns.nvim",
-    layz = true,
+    lazy = true,
     event = { "VeryLazy", "BufReadPost" },
     config = function()
       require("aoeivux.plugins.config.gitsigns-nvim")
