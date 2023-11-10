@@ -327,6 +327,7 @@ require("lazy").setup({
   -- blankline
   {
     "lukas-reineke/indent-blankline.nvim",
+    main = 'ibl',
     event = { "BufReadPost" },
     config = function()
       require("aoeivux.plugins.config.indent-blankline")
