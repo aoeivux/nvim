@@ -236,7 +236,7 @@ require("lazy").setup({
     event = { "VeryLazy" },
     cmd = { "Telescope" },
     keys = { "<leader>" },
-    tag = "0.1.1",
+    tag = "0.1.4",
     config = function()
       require("aoeivux.plugins.config.telescope")
     end,
