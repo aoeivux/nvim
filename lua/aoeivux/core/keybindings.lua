@@ -1,5 +1,8 @@
+-- default leader ===> <space>
+
 -- vim.g.mapleader = ";"
 -- vim.g.maplocalleader = ";"
+
 
 local map = vim.api.nvim_set_keymap
 local opt = { noremap = true, silent = true }
@@ -7,17 +10,11 @@ local keymap = vim.keymap.set
 local M = {}
 
 M.setup = function()
-  -- Esc
-  -- map("i", "jk", "<C-\\><C-N>", opt)
-  -- n 模式下复制内容到系统剪切板
-  map("n", "<Leader>c", '"+yy', opt)
-  -- v 模式下复制内容到系统剪切板
-  map("v", "<Leader>c", '"+yy', opt)
-  -- n 模式下粘贴系统剪切板的内容
-  map("n", "<Leader>v", '"+p', opt)
+  
   -- 取消搜索高亮显示
   map("n", ";l", ":nohlsearch<CR>", opt)
   map("n", "<Esc>", ":nohlsearch<CR>", opt)
+  
   -- 快速移动
   map("n", "K", "5k", opt)
   map("n", "J", "5j", opt)
@@ -40,6 +37,7 @@ M.setup = function()
   vim.api.nvim_create_user_command("BufferCloseOther", function()
     require("aoeivux.core.utils").close_other_bufline()
   end, {})
+  
   map("n", "S", ":w<CR>", opt)
   map("n", "<Leader>w", ":bd<CR>", opt)
   map("n", "<Leader>W", ":%bd<CR>", opt)
@@ -55,12 +53,12 @@ M.setup = function()
   map("t", "<Esc>", "<C-\\><C-N>", opt)
   -- map("t", "jk", "<C-\\><C-N>", opt)
 
-  -- ToggleTerm
-  map("n", "<F12>", ":ToggleTerm<CR>", opt)
-  map("t", "<F12>", "<C-\\><C-N>:ToggleTerm<CR>", opt)
-  map("n", "<leader>tt", ":ToggleTerm<CR>", opt)
-  map("v", "<leader>tt", ":ToggleTermSendVisualSelection<CR>", opt)
-  map("t", "tt", "<C-\\><C-N>:ToggleTerm<CR>", opt)
+  -- ToggleTerm 暂时没有使用
+  -- map("n", "<F12>", ":ToggleTerm<CR>", opt)
+  -- map("t", "<F12>", "<C-\\><C-N>:ToggleTerm<CR>", opt)
+  -- map("n", "<leader>tt", ":ToggleTerm<CR>", opt)
+  -- map("v", "<leader>tt", ":ToggleTermSendVisualSelection<CR>", opt)
+  -- map("t", "tt", "<C-\\><C-N>:ToggleTerm<CR>", opt)
 
   -- symbols-outline.nvim
   map("n", "<space>o", ":<C-u>SymbolsOutline<CR>", opt)
@@ -73,21 +71,22 @@ M.setup = function()
     tb.find_files({ default_text = text })
   end, opt)
   map("n", "<C-p>", "<cmd>Telescope find_files<cr>", opt)
-  map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opt)
+  -- 搜寻当前vim root目录下，符合字符串要求的文件
+  map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opt) 
   keymap("v", "<leader>fg", function()
     local tb = require("telescope.builtin")
     local text = require("aoeivux.core.utils").get_visual_selection()
     tb.live_grep({ default_text = text })
   end, opt)
-  map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opt)
-  map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opt)
-  map("n", "<leader>fr", "<cmd> Telescope oldfiles <CR>", opt)
+  map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opt) -- buffers
+  map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opt) -- help doc
+  map("n", "<leader>fr", "<cmd> Telescope oldfiles <CR>", opt) -- recentlt used files
 
-  -- translate
-  map("n", "<leader>tz", ":Translate ZH -source=EN -parse_after=window -output=floating<cr>", opt)
-  map("v", "<leader>tz", ":Translate ZH -source=EN -parse_after=window -output=floating<cr>", opt)
-  map("n", "<leader>te", ":Translate EN -source=ZH -parse_after=window -output=floating<cr>", opt)
-  map("v", "<leader>te", ":Translate EN -source=ZH -parse_after=window -output=floating<cr>", opt)
+  -- translate (暂时没有使用)
+  -- map("n", "<leader>tz", ":Translate ZH -source=EN -parse_after=window -output=floating<cr>", opt)
+  -- map("v", "<leader>tz", ":Translate ZH -source=EN -parse_after=window -output=floating<cr>", opt)
+  -- map("n", "<leader>te", ":Translate EN -source=ZH -parse_after=window -output=floating<cr>", opt)
+  -- map("v", "<leader>te", ":Translate EN -source=ZH -parse_after=window -output=floating<cr>", opt)
 
   -- nvim-dap
   keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opt)
@@ -117,8 +116,8 @@ M.setup = function()
   -- nvim-spectre
   map("n", "<leader>S", "<cmd>lua require('spectre').open()<CR>", opt)
 
-  -- ToggleTask
-  map("n", "<leader>ts", "<cmd>Telescope toggletasks spawn<cr>", opt)
+  -- ToggleTask （暂时没有使用）
+  -- map("n", "<leader>ts", "<cmd>Telescope toggletasks spawn<cr>", opt)
 
   -- nvimTree
   map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
