@@ -24,7 +24,7 @@ git clone  https://github.com/aoeivux/nvim.git
 
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fd](https://github.com/sharkdp/fd)
-- [JDK](https://openjdk.org/) 8/17+
+- [JDK](https://openjdk.org/) 17+
 - [maven](https://maven.apache.org/)
 - [nodejs](https://nodejs.org/en)
 - [yarn](https://yarnpkg.com/)
