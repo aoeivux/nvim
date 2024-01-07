@@ -51,4 +51,4 @@ keymap.set("n", "<TAB>", ":BufferLineCycleNext <CR>", opt)
 keymap.set("n", "<S-TAB>", ":BufferLineCyclePrev <CR>", opt)
 
 -- toggle neotree
-keymap.set("n", "<M-1>", "<Cmd>Neotree toggle<CR>", opt)
+keymap.set("n", "<M-1>", "<Cmd>Neotree focus<CR>", opt)
