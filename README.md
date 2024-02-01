@@ -9,3 +9,8 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 ![Page](Screenshots/page.png)
 
+## Installation requirements for windows users
+
+```shell
+scoop install fd ripgrep fzf nodejs make cmake
+```
