@@ -21,3 +21,18 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.b.autoformat = false
   end,
 })
+-- 设置字体样式
+vim.cmd([[
+  " 注释
+  " hi Comment guifg=#4caee2 gui=italic
+  " 关键字
+  hi Keyword gui=bold
+  " 变量
+  hi Variable gui=italic
+  " 函数
+  hi Function gui=italic
+  " 数字
+  hi Number guifg=#AE81FF
+  " 类型
+  hi Type gui=bold
+]])
