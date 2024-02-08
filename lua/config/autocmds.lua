@@ -21,18 +21,22 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.b.autoformat = false
   end,
 })
--- 设置字体样式
-vim.cmd([[
-  " 注释
-  " hi Comment guifg=#4caee2 gui=italic
-  " 关键字
-  hi Keyword gui=bold
-  " 变量
-  hi Variable gui=italic
-  " 函数
-  hi Function gui=italic
-  " 数字
-  hi Number guifg=#AE81FF
-  " 类型
-  hi Type gui=bold
-]])
+
+-- Set font styles
+vim.api.nvim_create_autocmd("VimEnter", {
+  pattern = "*",
+  callback = function()
+    -- Comment
+    vim.cmd('hi Comment guifg=#4caee2 gui=italic')
+    -- Keyword
+    vim.cmd('hi Keyword gui=bold')
+    -- Variable
+    vim.cmd('hi Variable gui=italic')
+    -- Function
+    vim.cmd('hi Function gui=italic')
+    -- Number
+    vim.cmd('hi Number guifg=#AE81FF')
+    -- Type
+    vim.cmd('hi Type gui=bold')
+  end
+})
