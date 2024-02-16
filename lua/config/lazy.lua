@@ -20,6 +20,8 @@ require("lazy").setup({
           },
         },
     },
+    { import = "lazyvim.plugins.extras.lang.java" },
+
 
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
