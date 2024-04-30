@@ -10,21 +10,21 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     {
-        "LazyVim/LazyVim",
-        import = "lazyvim.plugins",
-        opts = {
-          colorscheme = "solarized-osaka",
-          news = {
-            lazyvim = true,
-            neovim = true,
-          },
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins",
+      opts = {
+        -- colorscheme = "solarized-osaka",
+        colorscheme = "visual_studio_code",
+        news = {
+          lazyvim = true,
+          neovim = true,
         },
+      },
     },
-    { import = "lazyvim.plugins.extras.lang.java" },
-
-
     -- import any extras modules here
+    -- { import = "lazyvim.plugins.extras.lang.java" },
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.lang.clangd" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- import/override with your plugins
