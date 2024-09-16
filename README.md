@@ -1,8 +1,14 @@
-# 💤 nvchad
+<h1 align="center">💤NvChad💤</h1>
+<h4 align="center">A starter template for nvchad.</h4>
 
-A starter template for nvchad.
-
+## Showcase
 ![](./assets/home.png)
+
+![](./assets/Context.png)
+
+![](./assets/term.png)
+
+![](./assets/float-term.png)
 
 
 ## Startup
@@ -16,12 +22,7 @@ If you're using PowerShell(pwsh)
 git clone https://github.com/NvChad/starter $ENV:USERPROFILE\AppData\Local\nvim && nvim
 ```
 
-## Requirements![](./assets/Context.png)
-
-![](./assets/term.png)
-
-![](./assets/float-term.png)
-
+## Requirements
 - `Windows`
 
   ```shell
