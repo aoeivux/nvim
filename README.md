@@ -1,16 +1,35 @@
-# 💤 LazyVim
-master
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+# 💤 nvchad
 
-![HomePage](Screenshots/homepage.png)
+A starter template for nvchad.
 
-![lazyvim](Screenshots/lazyvim.png)
+![](./assets/home.png)
 
-![Page](Screenshots/page.png)
 
-## Installation requirements for windows users
-
+## Startup
+If you're using Command Prompt(CMD)
 ```shell
-scoop install fd ripgrep fzf nodejs make cmake luarocks
+git clone https://github.com/NvChad/starter %USERPROFILE%\AppData\Local\nvim && nvim
 ```
+
+If you're using PowerShell(pwsh)
+```shell
+git clone https://github.com/NvChad/starter $ENV:USERPROFILE\AppData\Local\nvim && nvim
+```
+
+## Requirements![](./assets/Context.png)
+
+![](./assets/term.png)
+
+![](./assets/float-term.png)
+
+- `Windows`
+
+  ```shell
+  scoop install fd ripgrep fzf nodejs make cmake luarocks
+  ```
+
+- `MacOS`
+
+  ```shell
+  brew install fd ripgrep fzf nodejs make cmake luarocks
+  ```
