@@ -5,13 +5,13 @@
 local M = {}
 
 M.base46 = {
-    theme = "gruvbox"
+    theme = "gruvbox",
     -- hl_override = {},
     -- hl_add = {},
     -- below default
     -- integrations = {},
     -- changed_themes = {},
-    -- transparency = false,
+    transparency = true,
     -- theme_toggle = { "onedark", "one_light" },
 }
 
