@@ -11,7 +11,7 @@ M.base46 = {
     -- below default
     -- integrations = {},
     -- changed_themes = {},
-    transparency = true,
+    transparency = false,
     -- theme_toggle = { "onedark", "one_light" },
 }
 

@@ -23,6 +23,9 @@ map("n", "<M-1>", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
 -- telescope
 map("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "telescope find recent files" })
 
+-- LSP
+map("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "LSP hover" })
+
 -- 取消搜索高亮显示
 map("n", ";l", ":nohlsearch<CR>")
 
