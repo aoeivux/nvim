@@ -29,6 +29,10 @@ nvim && :MasonInstallAll
 - `Windows`
 
   ```shell
+  scoop bucket add main
+  ```
+
+  ```shell
   scoop install fd ripgrep fzf nodejs make cmake luarocks
   ```
 
