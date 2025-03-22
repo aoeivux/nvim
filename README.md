@@ -39,7 +39,6 @@ If you're using PowerShell(pwsh)
 ```shell
 git clone https://github.com/aoeivux/nvim $ENV:USERPROFILE\AppData\Local\nvim && nvim
 ```
-then
 ```shell
 nvim && :MasonInstallAll
 ```
