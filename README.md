@@ -1,7 +1,7 @@
 <h1 align="center">💤NvChad💤</h1>
 <h4 align="center">A starter template for nvchad.</h4>
 
-## Showcase
+<h4 align="center">Showcase</h4>
 ![](./assets/home.png)
 
 ![](./assets/Context.png)
@@ -10,8 +10,8 @@
 
 ![](./assets/float-term.png)
 
+<h4 align="center">Requirements</h4>
 
-## Requirements
 - `Windows`
 
   ```shell
@@ -28,8 +28,8 @@
   brew install fd ripgrep fzf nodejs make cmake luarocks
   ```
 
+<h4 align="center">StartUp</h4>
 
-## StartUp
 If you're using Command Prompt(CMD)
 ```shell
 git clone https://github.com/aoeivux/nvim %USERPROFILE%\AppData\Local\nvim && nvim
